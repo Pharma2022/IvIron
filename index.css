@@ -7,7 +7,7 @@
     flex-direction:column; 
     margin: 80px 80px;
     margin-bottom: 0px;
-     	
+    font-family: 'Happy Monkey', cursive;	
 }
 h1,h2,h3,h4,h5{
 	 font-family: 'Happy Monkey', cursive;
@@ -27,6 +27,7 @@ label{
     margin-left: 145px;
     font-weight: bolder;
     position: relative;
+    font-family: 'Happy Monkey', cursive;	
 }
 
 
@@ -45,10 +46,11 @@ input{
     font-weight: bold;
     text-shadow: 0px;
     border: 3px solid darkslategray;
-    
+    font-family: 'Happy Monkey', cursive;
     background: white;
     color: darkslategray;
     text-align: center;
+		
 }
 
 
