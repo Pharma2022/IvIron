@@ -7,10 +7,10 @@
     flex-direction:column; 
     margin: 80px 80px;
     margin-bottom: 0px;
-    font-family: 'Happy Monkey', cursive;	
+    font-family: 'Calibri', sans-serif;	
 }
 h1,h2,h3,h4,h5{
-	 font-family: 'Happy Monkey', cursive;
+	    font-family: 'Calibri', sans-serif;	
 }
 	
 h4{
@@ -27,7 +27,7 @@ label{
     margin-left: 145px;
     font-weight: bolder;
     position: relative;
-    font-family: 'Happy Monkey', cursive;	
+     font-family: 'Calibri', sans-serif;		
 }
 
 
@@ -46,7 +46,7 @@ input{
     font-weight: bold;
     text-shadow: 0px;
     border: 3px solid darkslategray;
-    font-family: 'Happy Monkey', cursive;
+     font-family: 'Calibri', sans-serif;	
     background: white;
     color: darkslategray;
     text-align: center;
@@ -81,7 +81,7 @@ body{
    background: white;
    color: black;
    text-shadow: 0px ; 
-   font-family: 'Happy Monkey', cursive;
+      font-family: 'Calibri', sans-serif;	
 
     
 }
