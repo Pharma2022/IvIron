@@ -50,7 +50,7 @@ const ivIron= document.getElementById("ivIron")
             modifier=" ideal body"
            
         } else if (bmi>30){
-            finalWeight=ddw
+            finalWeight=ddw.toFixed(0)
             modifier=" adjusted body" }
         else{  finalWeight=patientWeight  
                      modifier=" actual body"}
