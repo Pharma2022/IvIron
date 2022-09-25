@@ -9,6 +9,8 @@
     margin-bottom: 0px;
  
 }
+h1,h2,h3,h4,h5{
+	font-family: 'Happy Monkey', cursive, Arial, Helvetica, sans-serif;
 h4{
     margin: 30px 0px ;
     margin-bottom: 15px;
