@@ -7,7 +7,7 @@
     flex-direction:column; 
     margin: 80px 80px;
     margin-bottom: 0px;
- 
+     	
 }
 h1,h2,h3,h4,h5{
 	 font-family: 'Happy Monkey', cursive;
@@ -79,7 +79,7 @@ body{
    background: white;
    color: black;
    text-shadow: 0px ; 
-   
+   font-family: 'Happy Monkey', cursive;
 
     
 }
