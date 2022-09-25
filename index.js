@@ -103,7 +103,7 @@ const ivIron= document.getElementById("ivIron")
             <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
             
            <h5> Add the required quantity for each infusion to 500ml 0.9% Sodium Chloride.</h5>
-           <h5> Give over 4-6 hours</h5>
+           <h5> Give over 30minutes</h5>
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
             </div>`
             testdose=`No test dose is required`
@@ -133,7 +133,7 @@ const ivIron= document.getElementById("ivIron")
            
           <h5> Add to 500ml 0.9% Sodium Chloride.</h5>
            
-           <h5> Give over over 4-6 hours</h5>
+           <h5> Give over 30 minutes</h5>
             
            </div> `
             }
