@@ -25,7 +25,7 @@ label{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 145px;
-	margin-right:45px;
+	margin-right:10px;
     font-weight: bolder;
     position: relative;
      font-family: 'Calibri', sans-serif;		
@@ -39,7 +39,7 @@ input{
     width: 140px;
     height: 35px;
 	padding: 20px 16px;
-	margin-left:45px;
+	margin-left:10px;
     margin-top:7px auto;
     margin-right: 145px;
     align-self: center;
