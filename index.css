@@ -34,7 +34,8 @@ input{
     height: 35px;
 	padding: 20px 16px;
 	
-    margin-top:7px auto;
+    margin-top:7px ;
+    margin-left:40px;	
     margin-right: 145px;
     align-self: center;
     border-radius: 4.6px;
