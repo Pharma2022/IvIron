@@ -22,7 +22,7 @@ const ivIron= document.getElementById("ivIron")
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML+= `
                 
-                <h3><div> Calculated dose: for ${myIron}</h3></div> 
+                <h3><div> Calculated dose: for ${myIron} Target Hb:${patientTargetHb} Actual Hb: ${patientActualHb} </h3></div> 
                 <h4><div >Total Iron required is <span>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
                
                <h4 id="box">${testdose}</h4>
