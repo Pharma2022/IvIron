@@ -28,7 +28,7 @@ label{
     margin-left: 165px;
 	margin-right:10px;
     font-weight: bolder;
-    position: relative;
+   
      font-family: 'Calibri', sans-serif;		
 }
 
@@ -41,8 +41,8 @@ input{
     height: 45px;
 	padding: 20px 16px;
 	margin-left:25px;
-    margin-top:7px auto;
-    margin-right: 165px;
+    margin-top:7px;
+ 
    font-sizing:large;
     border-radius: 4.6px;
     font-weight: bold;
