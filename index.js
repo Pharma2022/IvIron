@@ -1,5 +1,5 @@
 // javascript
-const gender= document.getElementById("gender")
+let  patientGender= "Male"
 const height=document.getElementById("height")
 const bodyWeight = document.getElementById("body-weight")
 const targetHb=document.getElementById("target-hb")
@@ -7,14 +7,51 @@ const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
 const ivIron= document.getElementById("ivIron")
+const reset= document.getElementById("reset")
+const male = document.getElementById("male")
+const female = document.getElementById("female")
+male.addEventListener("click",function(e){
+    e.preventDefault()
+    
+    patientGender= male.value
+    console.log(patientGender)
+    female.style.backgroundColor="white"
+   female.style.color=  "darkslategray"
+      female.style.textShadow= " 0px 0px 0px black"
+    male.style.backgroundColor="darkslategray"
+    male.style.color= "white"
+        male.style.textShadow= " 0px 0px 4px black"
+
+    
+    
+}
+)
+female.addEventListener("click",function(e){
+    e.preventDefault()
+    console.log(patientGender)
+   patientGender = female.value
+    console.log(patientGender)
+        male.style.backgroundColor="white"
+    male.style.color=  "darkslategray"
+    male.style.textShadow= " 0px 0px 0px black"
+    female.style.backgroundColor="darkslategray"
+    female.style.color= "white" 
+       female.style.textShadow= " 0px 0px 4px black" 
+}
+)
+reset.addEventListener("click",function(){
+
+    reset.style.display="none"
+})
 
         calculateDose.addEventListener("click",function(){
-        const patientGender=gender.value
-        const patientHeight = JSON.parse(height.value)
-        const patientWeight= JSON.parse(bodyWeight.value)
-        const patientTargetHb= JSON.parse(targetHb.value)
-        const patientActualHb= JSON.parse(actualHb.value)
-        const myIron=ivIron.value
+           
+                const patientHeight = JSON.parse(height.value)
+                const patientWeight= JSON.parse(bodyWeight.value)
+                const patientTargetHb= JSON.parse(targetHb.value)
+                const patientActualHb= JSON.parse(actualHb.value)
+                const myIron=ivIron.value
+                reset.style.display="block"
         
 // for (let i= 0; i<myPatientParameters.length; i++){
   //   console.log(myPatientParameters[i]+typeof myPatientParameters[i]) 
@@ -32,8 +69,8 @@ const ivIron= document.getElementById("ivIron")
         
         let bmi= patientWeight*10000/(patientHeight*patientHeight)
         let factor = 50
-                    if (gender.value == "Female")    {  factor =45.5    }
-                    else if (gender.value=="Male")  { factor =50}        
+                    if (patientGender == "Female")    {  factor =45.5    }
+                    else if (patientGender=="Male")  { factor =50}        
         let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
         let ddw= ibw+ 0.4*(patientWeight-ibw)
         console.log("ddw= "+ddw+ " ibw= "+ibw)
@@ -152,78 +189,5 @@ const ivIron= document.getElementById("ivIron")
 
 
   })
-  { /*  
- calculateDose.addEventListener("click", function(){
   
-
-  if (bodyWeight.value,targetHb.value,actualHb.value){
-        
-        renderDose.innerText=""
-        let weight= bodyWeight.value
-
-        let bmi= bodyWeight.value*10000/(height.value*height.value)
-      
-        let factor = 50
-     
-        let patientGender = gender.value
-        console.log(patientGender)
- 
-                     if (gender.value == "Female")
-                        {  factor =45.5    }
-                    else if (gender.value=="Male")
-                        { factor =50}       
-     
-        let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
-        let modifier=""
-        
-        if (bmi<25 && bmi>10)
-       { modifier=" actual "}
-        
-        else if (bmi=>25 && bmi<30)
-        {console.log(bmi) 
-        modifier=" ideal body " 
-        weight=ibw.toFixed(0) }
-        
-        else if(bmi>30){
-        let ddw= ibw+ 0.4*(weight-ibw)
-        console.log( ddw) 
-        weight= ddw.toFixed(0)
-        modifier= "adjusted body "}
-        
-         let calculation = (0.24*weight*(targetHb.value-actualHb.value)).toFixed(0)
-        console.log(calculation)
-            let firstInfusion=""
-           let secondInfusion=""
-            let infusionNumber= `a single infusion of ${calculation}mg`
-      let maxSingleDose= 20*weight
-       
-        if (calculation>2000){
-           
-            calculation=2000
-        }
-       
-        if (calculation>maxSingleDose) {
-            infusionNumber= "two infusions "
-            firstInfusion= `The first infusion is ${maxSingleDose}mg` 
-            if (weight<35){secondInfusion= `the second infusion is ${calculation -maxSingleDose}mg`}
-            else {secondInfusion= `the second infusion is ${calculation -maxSingleDose}mg`}
-        }
-        if( weight<=35){ calculation-= 500
-            
-           renderDose.innerHTML+= `Total Iron required ${(calculation+500)}mg, bmi=${bmi.toFixed(2)} using ${modifier} weight =${weight}kg. The patient will need ${infusionNumber} 
-           ${firstInfusion}, ${secondInfusion}`
-        }   
-        else {
-           renderDose.innerHTML+= `Total Iron required ${(calculation)}mg, bmi=${bmi.toFixed(2)} using ${modifier} weight =${weight}kg. The patient will need ${infusionNumber} 
-           ${firstInfusion}, ${secondInfusion}`}
-   
-    
-        
-         }
-         
-    
-  
-})*/}
-
- 
  
