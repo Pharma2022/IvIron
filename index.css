@@ -62,8 +62,8 @@ label{
     text-shadow:  0px 0px 0px black;
 }
 #male{
-   position:absolute;
-	right:325px;
+   position:relative;
+	right:100px;
 }
 
 input{   
