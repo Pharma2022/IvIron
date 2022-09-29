@@ -30,17 +30,13 @@ label{
     width: 190px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 25px;
+    margin-left: 255px;
 	
     font-weight: bolder;
    
      font-family: 'Calibri', sans-serif;		
 }
-#form{
-	 
-    margin: 0px auto;
-	
-}
+
 .gender{
      border-radius: 8px;
     background: darkslategray;
@@ -58,7 +54,8 @@ label{
           
 }
 #female{
-    margin-right:25px; 
+     position:absolute;
+	right:255px;
     
     background:white;
    color:  darkslategray;
@@ -66,7 +63,7 @@ label{
 }
 #male{
    position:absolute;
-	right:100px;
+	right:325px;
 }
 
 input{   
@@ -74,7 +71,7 @@ input{
     width: 145px;
     height: 35px;
 	padding: 20px 16px;
-	margin-right:25px;
+	margin-right:255px;
     margin-top:7px;
    font-sizing:large;
     border-radius: 4.6px;
@@ -210,4 +207,4 @@ header{
     display: none;
 }
 
-#
+
