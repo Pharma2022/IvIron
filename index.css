@@ -37,8 +37,7 @@ label{
      font-family: 'Calibri', sans-serif;		
 }
 #form{
-	  display: flex;
-    justify-items: space-around;
+	 
     margin: 0px auto;
 	width: 700px;
 }
