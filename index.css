@@ -40,6 +40,7 @@ label{
 	  display: flex;
     justify-items: space-around;
     margin: 0px auto;
+	width 800px;
 }
 .gender{
      border-radius: 8px;
