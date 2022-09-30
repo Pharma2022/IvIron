@@ -42,13 +42,14 @@ label{
     text-shadow: 0px 0px 4px black;
     border: 1px solid black ;
     font-weight: bold;
-    font-size:large;
+    font-size:larger;
+    
        
-       width: 72.5px;
-    height: 35px;
+       width: 95px;
+    height: 45px;
     	
         text-align: center;
-          padding: 12px 4px;
+     padding: 0px  ;
           justify-content:center;
 }
 #female{
@@ -60,17 +61,17 @@ label{
 }
 #male{
        position:relative;
-	       right:-15px;
+	       right:0px;
 }
 
 input{   
     display: inline-block;
     width: 145px;
     height: 35px;
-	padding: 20px 16px;
+	padding: 10px 16px;
 	margin-right:255px;
-    margin-top:7px;
-   font-sizing:large;
+    margin-top:10px 0;
+    font-size: larger;
     border-radius: 4.6px;
     font-weight: bold;
     text-shadow: 0px;
@@ -203,5 +204,4 @@ header{
 #reset{
     display: none;
 }
-
 
