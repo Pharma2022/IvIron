@@ -44,17 +44,17 @@ label{
 }
 input{   
     display: inline-block;
-    width: 144px;
-    height: 37px;
+    width: 145px;
+    height: 35px;
 	padding: 10px 16px;
 	margin-right:255px;
     margin-top:10px;
     margin-bottom:0px;	
     font-size: larger;
-  
+    border-radius: 4.6px;
     font-weight: bold;
     text-shadow: 0px;
-    border: 1px solid darkslategray;
+    border: 2.5px solid darkslategray;
      font-family: 'Calibri', sans-serif;	
     background: white;
     color: darkslategray;
@@ -67,20 +67,20 @@ input{
     background: darkslategray;
     color: white;
     text-shadow: 0px 0px 4px black;
-    border: 1px solid darkslategray ;
+    border: 1px solid black ;
     font-weight: bold;
     font-size:large;
     
        
-    width: 72px;
-    height: 37px;
+    width: 85px;
+    height: 40px;
     	
         text-align: center;
      padding: 0px  ;
           justify-content:center;
 }
 #female{
-    margin-right:256.5px;
+    margin-right:255px;
     
     background:white;
    color:  darkslategray;
@@ -88,7 +88,7 @@ input{
 }
 #male{
        position:relative;
-	       right:-18px;
+	       right:0px;
 }
 
 
@@ -177,11 +177,11 @@ header{
 #shah{
     
     display: inline-block;
-    min-width: 100%;
-    width: auto;
+    min-width:800px;
+    width: 800px;
     align-self: center;
     padding: 20px 25px;
-    margin: 0px 10px;
+    margin: 0px auto;
 }
 #render-dose{
     
@@ -215,4 +215,39 @@ header{
 #reset{
     display: none;
 }
+.references{
+font-size: medium;
+
+
+
+}
+
+#Ferinject,#Monofer,#Cosmofer,#guidelines,#reference-heading{
+  margin: 0px 20px;
+    font-size: small;
+    font-weight: normal;
+}
+#Cosmofer{
+    margin-bottom: -15px;
+}
+#reference-heading{
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    
+}
+#references{
+    
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid gray;
+    width: 800px;
+    
+}
+
+
+
 
