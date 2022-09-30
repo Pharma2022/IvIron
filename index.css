@@ -7,9 +7,7 @@
     max-width:900px;	
     display: flex;
     flex-direction:column; 
-    position: absolute;
-    left: 0;
-    right: 0;
+  
     margin: 0 auto; 
     font-family: 'Calibri', sans-serif;	
 }
