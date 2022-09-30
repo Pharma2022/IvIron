@@ -36,7 +36,7 @@ label{
 }
 
 .gender{
-     
+     margin-top:7px;
     background: darkslategray;
     color: white;
     text-shadow: 0px 0px 4px black;
@@ -44,15 +44,15 @@ label{
     font-weight: bold;
     font-size:large;
        
-       width: 100px;
-    height: 55px;
+       width: 72.5px;
+    height: 35px;
     	
         text-align: center;
-          padding: 12px 4px;
+          padding: 20px 16px;
           
 }
 #female{
-    margin-right:245px;
+    margin-right:255px;
     
     background:white;
    color:  darkslategray;
@@ -74,7 +74,7 @@ input{
     border-radius: 4.6px;
     font-weight: bold;
     text-shadow: 0px;
-    border: 3px solid darkslategray;
+    border: 2.5px solid darkslategray;
      font-family: 'Calibri', sans-serif;	
     background: white;
     color: darkslategray;
