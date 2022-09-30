@@ -48,8 +48,8 @@ label{
     height: 35px;
     	
         text-align: center;
-          padding: 20px 16px;
-          
+          padding: 12px 4px;
+          justify-content:center;
 }
 #female{
     margin-right:255px;
