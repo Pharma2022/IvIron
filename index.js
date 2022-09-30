@@ -108,7 +108,10 @@ reset.addEventListener("click",function(){
         let message=""
         let testdose=""
         
-        if(ivIron.value==="Ferinject"){testdose="No test dose is required"
+        if(ivIron.value==="Ferinject")
+
+
+    {testdose="No test dose is required"
          
             let minutes =""
             let volume = ""
@@ -142,7 +145,7 @@ reset.addEventListener("click",function(){
                         </div>` }
             
             
-            function FerinjectInfusionDouble(){
+            function ferinjectInfusionDouble(){
                if (firstInfusion<=200)
                     {firstVolume =50
                     firstTime = 6}
@@ -171,11 +174,10 @@ reset.addEventListener("click",function(){
                         
                     <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
-                     <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>` 
-            }
+                     <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
                 
-                function FerinjectInfusionTriple(){
-                    FerinjectInfusionDouble()
+                function ferinjectInfusionTriple(){
+                    ferinjectInfusionDouble()
                     if (thirdInfusion>500)
                     { thirdVolume = 250
                     thirdTime = 15}
@@ -183,28 +185,22 @@ reset.addEventListener("click",function(){
                     {thirdVolume =50
                     thirdTime = 6}
                 
-                else if (thirdInfusion>200&&thirdInfusion<=500)
+                 if (thirdInfusion>200&&thirdInfusion<=500)
                     {thirdVolume = 250
                     thirdTime = 6}
                     
                     message =`<li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li><li>Third infusion: ${thirdInfusion} mg</li>
                         
-                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
+                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions and third infusions. To avoid using three infusions, please consider Monofer or Cosmofer </h5>
                      <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5>
-                     <h5> Add the third infusion of ${thirdInfusion}mg to a maximum of ${thirdVolume}ml Sodium Chloride. Give over a minimum ${thirdTime} minutes</h5> </div>` 
-                
-            
-                
-                    
-                    
-                }
+                     <h5> Add the third infusion of ${thirdInfusion}mg to a maximum of ${thirdVolume}ml Sodium Chloride. Give over a minimum ${thirdTime} minutes</h5> </div>`   }
                 
                 
                 
                  
-            if(finalWeight<35||patientActualHb>=140){
-                finalCalculation= 500
+            if(finalWeight<35||patientActualHb>=140)
+                {finalCalculation= 500
                 
                    message=`<div> <div id="single">A single infusion of ${finalCalculation}mg             is required.</div>
                     
@@ -212,57 +208,91 @@ reset.addEventListener("click",function(){
                     
                         <h5> Give over a minimum of ${minutes} minutes</h5>
                         </div>`
-                        ferinjectMessageSingle()
-                }
+                        ferinjectMessageSingle()}
+          
+                
+                
+                      
+                      
+                      
+            }
            
-           if(patientActualHb>100&&patientActualHb<140){
-                 finalCalculation=1000
-                
-                     if (finalWeight>=35&&finalWeight<=49)
-                        { if(finalWeight>=35&&finalWeight<=39)
-                                { firstInfusion= 700
-                                secondInfusion=300}
-                             if(finalWeight>=40&&finalWeight<=44)
-                                 { firstInfusion = 800
-                                 secondInfusion= 200}  
-                             if(finalWeight>=40&&finalWeight<=44)
-                                { firstInfusion = 800
-                                    secondInfusion=200 } 
-                               FerinjectInfusionDouble() }
+           
+           
+           
+              
+                    
                         
-                         
-                         if (finalWeight>=50&&finalWeight<70){
-                         
-                        ferinjectMessageSingle() }  
+                             
+                           
+                                
+                  
+                      
+            if (patientActualHb<=100)
+            
+                {   if (finalWeight>=35&&finalWeight<70)
+                        { finalCalculation=1500
+                            firstInfusion=1000
+                            secondInfusion=500
+                    if(finalWeight>=38&&finalWeight<40)
+                    {firstInfusion=750
+                    secondInfusion=750}
+                    if(finalWeight>=40&&finalWeight<50)
+                    {firstInfusion=800
+                    secondInfusion=700}
+                    ferinjectInfusionDouble()
+                    if(finalWeight>=35&&finalWeight<38){
+                        firstInfusion=700
+                        secondInfusion=700
+                        thirdInfusion=100          
+                        ferinjectInfusionTriple()}    }
+                    
+                    if (finalWeight>=70)
+                        {finalCalculation=2000
+                        firstInfusion= 1000
+                        secondInfusion=1000
+                        ferinjectInfusionDouble()}
+                
+                }
+                
+                              
+            if (patientActualHb>100&&patientActualHb<140){
+                
+                
+                if(finalWeight>=35&&finalWeight<=39)
+                        { firstInfusion= 700
+                        secondInfusion=300}
+                 if(finalWeight>=40&&finalWeight<=44)
+                            { firstInfusion = 800
+                            secondInfusion= 200}  
+                   if(finalWeight>=45&&finalWeight<=49)
+                            { firstInfusion=900
+                            secondInfusion=100
+                            } 
+                 if (finalWeight>=35&&finalWeight<70)
+                    {finalCalculation=1000
+                       if (finalWeight>=35&&finalWeight<=49)
+                        { ferinjectInfusionDouble()  }
+                    
+                    
+                    if (finalWeight>=50&&finalWeight<70)
+                    {ferinjectMessageSingle()}
+                     }
+                    
+                     if (finalWeight>=70)
+                    {finalCalculation=1500
+                    firstInfusion= 1000
+                    secondInfusion=500
+                    ferinjectInfusionDouble()}
+                    
+                    
+                   
+                 
                 
                       
-            if (patientActualHb<100&&finalWeight>=35&&finalWeight<=70)
-                     { finalCalculation=1500
-                        firstInfusion=1000
-                        secondInfusion=500
-                if(finalWeight>=38&&finalWeight<40){
-                    firstInfusion=750
-                    secondInfusion=750}
-                if(finalWeight>=40&& finalWeight<50){
-                    firstInfusion=800
-                    secondInfusion=700}
-                            FerinjectInfusionDouble()}
-                 if(finalWeight>=35&&finalWeight<38)
-                    firstInfusion=700
-                    secondInfusion=700
-                    thirdInfusion=100          
-                      FerinjectInfusionTriple()
                       
-                        }
-            
-                            
-                       
-            
-        
-            console.log(finalCalculation+ " "+typeof +finalCalculation)
-            
-        }
-        
+                      
+            }
         
         
         if (ivIron.value=="Cosmofer"){
