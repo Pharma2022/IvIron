@@ -121,7 +121,7 @@ reset.addEventListener("click",function(){
             let secondTime=""
             let thirdVolume=""
             let thirdTime=""
-            let thirdInfusion=""
+            let thirdInfusion=100
         
             function ferinjectMessageSingle(){
             
