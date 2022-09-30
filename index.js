@@ -207,7 +207,7 @@ if(ivIron.value==="Ferinject")
                     minutes = 6}
                 
                 else if (finalCalculation>200&&finalCalculation<=500)
-                    {volume = 250
+                    {volume = 100
                     minutes = 6}
                 
                 if (finalCalculation>500)
@@ -228,7 +228,7 @@ if(ivIron.value==="Ferinject")
                     firstTime = 6}
                 
                 else if (firstInfusion>200&&firstInfusion<=500)
-                    {firstVolume = 250
+                    {firstVolume = 100
                     firstTime = 6}
                 
                 if (secondInfusion>500)
@@ -239,7 +239,7 @@ if(ivIron.value==="Ferinject")
                     secondTime = 6}
                 
                  if (secondInfusion>200&&secondInfusion<=500)
-                    {secondVolume = 250
+                    {secondVolume = 100
                     secondTime = 6}
                 
                 if (firstInfusion>500)
@@ -264,7 +264,7 @@ if(ivIron.value==="Ferinject")
                     thirdTime = 6}
                 
                  if (thirdInfusion>200&&thirdInfusion<=500)
-                    {thirdVolume = 250
+                    {thirdVolume = 100
                     thirdTime = 6}
                     
                     message =`<li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li><li>Third infusion: ${thirdInfusion} mg</li>
