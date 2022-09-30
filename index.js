@@ -304,7 +304,7 @@ reset.addEventListener("click",function(){
             finalWeight=90
         }
         
-        if (finalWeight*20<finalCalculation)
+        if (finalWeight*20<finalCalculation&&(ivIron.value==="Cosmofer"||"Monofer"))
             {firstInfusion= Math.round(finalWeight*20 / 100) * 100
             if (finalWeight.value>90){
             finalWeight=90 }
