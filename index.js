@@ -294,7 +294,7 @@ reset.addEventListener("click",function(){
         
             <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
             
-           <h5> Add the required quantity for each infusion to 500ml 0.9% Sodium Chloride.</h5>
+           <h5> Add the required quantity for each infusion to 100ml 0.9% Sodium Chloride.</h5>
            <h5> Give over 30minutes</h5>
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
             </div>`
@@ -323,7 +323,7 @@ reset.addEventListener("click",function(){
                 
             message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
            
-          <h5> Add to 500ml 0.9% Sodium Chloride.</h5>
+          <h5> Add to 100ml 0.9% Sodium Chloride.</h5>
            
            <h5> Give over 30 minutes</h5>
             
