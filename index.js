@@ -187,10 +187,10 @@ reset.addEventListener("click",function(){
                     {thirdVolume = 250
                     thirdTime = 6}
                     
-                    message =`<li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li><li>third infusion: ${thirdInfusion} mg</li>
+                    message =`<li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li><li>Third infusion: ${thirdInfusion} mg</li>
                         
                     <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
-                    <h5> Leave a minimum of <span> one week</span> between the first and second infusions and third infusions. To avoid using three infusions, please consider monofer </h5>
+                    <h5> Leave a minimum of <span> one week</span> between the first and second infusions and third infusions. To avoid using three infusions, please consider Monofer or Cosmofer </h5>
                      <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5>
                      <h5> Add the third infusion of ${thirdInfusion}mg to a maximum of ${thirdVolume}ml Sodium Chloride. Give over a minimum ${thirdTime} minutes</h5> </div>` 
                 
