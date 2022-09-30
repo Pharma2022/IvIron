@@ -52,16 +52,14 @@ label{
           
 }
 #female{
-     position:absolute;
-	right:255px;
+     transform: translateX(-255px);
     
     background:white;
    color:  darkslategray;
     text-shadow:  0px 0px 0px black;
 }
 #male{
-   position:absolute;
-	right:355px;
+      transform: translateX(-355px);
 }
 
 input{   
