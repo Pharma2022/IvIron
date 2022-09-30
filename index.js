@@ -317,7 +317,7 @@ if(ivIron.value==="Ferinject")
                         ferinjectInfusionDouble()}
                 
                 
-                
+                }
                               
             if (patientActualHb>100&&patientActualHb<140){
                 
@@ -338,9 +338,9 @@ if(ivIron.value==="Ferinject")
                                
                                 {finalCalculation=1000
                                       if (finalWeight>=35&&finalWeight<=49)
-                                            { ferinjectInfusionDouble()  }
+                                         { ferinjectInfusionDouble()  }
                                         if (finalWeight>=50&&finalWeight<70)
-                                {ferinjectMessageSingle()}  
+                                        {ferinjectMessageSingle()}  
                                                          }
                                 
                             if (finalWeight>=70)
@@ -349,11 +349,9 @@ if(ivIron.value==="Ferinject")
                                      secondInfusion=500
                             ferinjectInfusionDouble()}
                       
-                      
-                      
-            }
+                                   
                     
-                                 }
+                      }
                             
         }
         render()
