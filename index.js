@@ -215,11 +215,11 @@ reset.addEventListener("click",function(){
                         ferinjectMessageSingle()
                 }
            
-            if(patientActualHb>100&&patientActualHb<140){
-                     if (finalWeight>=35&&finalWeight<=49){
-                         finalCalculation=1000
-                             
-                              if(finalWeight>=35&&finalWeight<=39)
+           if(patientActualHb>100&&patientActualHb<140){
+                 finalCalculation=1000
+                
+                     if (finalWeight>=35&&finalWeight<=49)
+                        { if(finalWeight>=35&&finalWeight<=39)
                                 { firstInfusion= 700
                                 secondInfusion=300}
                              if(finalWeight>=40&&finalWeight<=44)
@@ -228,10 +228,12 @@ reset.addEventListener("click",function(){
                              if(finalWeight>=40&&finalWeight<=44)
                                 { firstInfusion = 800
                                     secondInfusion=200 } 
-                               FerinjectInfusionDouble() 
-                               if (finalWeight>=50&&finalWeight<70){
-                          finalCalculation = 1000
-                        ferinjectMessageSingle() }  }
+                               FerinjectInfusionDouble() }
+                        
+                         
+                         if (finalWeight>=50&&finalWeight<70){
+                         
+                        ferinjectMessageSingle() }  
                 
                       
             if (patientActualHb<100&&finalWeight>=35&&finalWeight<=70)
