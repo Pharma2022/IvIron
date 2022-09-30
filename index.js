@@ -99,7 +99,8 @@ reset.addEventListener("click",function(){
         
         
          let ironstore= 500
-        if (patientWeight<35){ironstore=0}
+        if (patientWeight<35){ironstore=Math.round(patientWeight*15/ 100) * 100;
+        console.log(ironstore)}
         
         
         let finalCalculation =(Math.round((JSON.parse(calculation) / 100) * 100))+ironstore
