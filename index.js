@@ -61,9 +61,10 @@ reset.addEventListener("click",function(){
                 
                 <h3><div> Calculated dose: for ${myIron}        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
                 <h4><div >Total Iron required is <span>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
-               
+              
                <h4 id="box">${testdose}</h4>
                 <h4 id="box"> ${message} </h4>
+                 <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. </h4>
                  
                 `}
         
@@ -227,7 +228,7 @@ if(ivIron.value==="Ferinject")
                     firstTime = 6}
                 
                 else if (firstInfusion>200&&firstInfusion<=500)
-                    {firstVolume = 100
+                    {firstVolume = 250
                     firstTime = 6}
                 
                 if (secondInfusion>500)
@@ -238,7 +239,7 @@ if(ivIron.value==="Ferinject")
                     secondTime = 6}
                 
                  if (secondInfusion>200&&secondInfusion<=500)
-                    {secondVolume = 100
+                    {secondVolume = 250
                     secondTime = 6}
                 
                 if (firstInfusion>500)
@@ -248,9 +249,9 @@ if(ivIron.value==="Ferinject")
                  message = ` <div>
                         <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
                         
-                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml 0.9% Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
+                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
-                     <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml 0.9% Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
+                     <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
                 
              
              function ferinjectInfusionTriple()
