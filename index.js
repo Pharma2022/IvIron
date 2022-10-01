@@ -56,7 +56,7 @@ female.addEventListener("click",function(e){
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
-                <h3><div> Calculated dose: for ${ironPrep}        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
+                <h3><div> Calculated dose for: ${ironPrep}.        <span>Target Hb: ${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
                 <h4><div >Total Iron required is <span>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
               
                <h4 id="box">${testdose}</h4>
