@@ -51,13 +51,13 @@ female.addEventListener("click",function(e){
                 
         
         
-  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>=(patientActualHb+10))&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
     {    
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
-                <h3><div> Calculated dose for: ${ironPrep}.        <span>Target Hb: ${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
-                <h4><div >Total Iron required is <span id = "finalCalc">${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
+                <h3><div> Calculated dose: for <span class= "finalCalc")${myIron}</span>        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
+                <h4><div >Total Iron required is <span class= finalCalc>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
               
                <h4 id="box">${testdose}</h4>
                 <h4 id="box"> ${message} </h4>
@@ -108,7 +108,7 @@ female.addEventListener("click",function(e){
         let message=""
         let testdose=""
         if (ironPrep=="Cosmofer"){
-            testdose= `The first 25mg of the first infusion needs to be given as a <span>test dose</span> over 15 minutes.`
+            testdose= `The first <span class = finalCalc>25mg</span> of the first infusion needs to be given as a <span class= finalCalc>test dose</span> over 15 minutes.`
         } 
         
       
@@ -135,37 +135,32 @@ female.addEventListener("click",function(e){
             if (ironPrep=="Cosmofer"){
             message = ` <div>
         
-            <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
+            <li> First infusion:<span class= "finalCalc"> ${firstInfusion}mg</span></li><li>Second infusion:<span class ="finalCalc"> ${secondInfusion}mg</span></li>
             
            <h5> Add the required quantity for each infusion to 500ml 0.9% Sodium Chloride.</h5>
            <h5> After giving the test dose , give over 4-6 hours</h5>
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
-            </div>`
-            
-             
-            
-            }
+            </div>`}
             
             if (ironPrep=="Monofer"){
             message = ` <div>
         
-            <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
+            <li> First infusion: <span class ="finalCalc">${firstInfusion}mg</span></li><li>Second infusion: ${secondInfusion} mg</li>
             
            <h5> Add the required quantity for each infusion to 100ml 0.9% Sodium Chloride.</h5>
            <h5> Give over 30minutes</h5>
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
             </div>`
             testdose=`No test dose is required`
-            
-           
+            }
            
             } 
         else{ firstInfusion= finalCalculation
-            testdose= ` The first 25mg of this infusion is to be given as a <span>test dose</span> over 15 minutes.`
+            testdose= ` The first <span class= "finalCalc"> 25mg<span> of this infusion is to be given as a <span class="finalCalc">test dose</span> over 15 minutes.`
             
               if (ironPrep=="Cosmofer"){
             
-            message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
+            message=`<div> <div id="single">A single infusion of <span class="finalCalc>${finalCalculation}mg</span> is required.</div>
            
           <h5> Add to 500ml 0.9% Sodium Chloride.</h5>
            
@@ -179,7 +174,7 @@ female.addEventListener("click",function(e){
             testdose= `No test dose is required`
                if(ironPrep==="Monofer"){
                 
-            message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
+            message=`<div> <div id="single">A single infusion of <span class ="finalCalc">${finalCalculation}mg</span> is required.</div>
            
           <h5> Add to 100ml 0.9% Sodium Chloride.</h5>
            
@@ -225,7 +220,7 @@ if(ironPrep==="Ferinject")
                     { volume = 250
                     minutes = 15}
                 
-                message=`<div> <div id="single">A single infusion of ${finalCalculation}mg             is required.</div>
+                message=`<div> <div id="single">A single infusion of <span class="finalCalc">${finalCalculation}mg</span> is required.</div>
                     
                         <h5> Add to maximum ${volume}ml 0.9% Sodium Chloride.</h5>
                     
@@ -258,7 +253,7 @@ if(ironPrep==="Ferinject")
                     firstTime = 15}
                 
                  message = ` <div>
-                        <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
+                        <li> First infusion:<span class="finalCalc"> ${firstInfusion}mg</span></li><li>Second infusion:<span class="finalCalc"> ${secondInfusion} mg</span></li>
                         
                     <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
@@ -278,7 +273,9 @@ if(ironPrep==="Ferinject")
                     {thirdVolume = 100
                     thirdTime = 6}
                     
-                    message =`<li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li><li>Third infusion: ${thirdInfusion} mg</li>
+                    
+                    
+                    message =` <li> First infusion:<span class="finalCalc"> ${firstInfusion}mg</span></li><li>Second infusion:<span class="finalCalc"> ${secondInfusion} mg</span></li>Third infusion:<span class="finalCalc"> ${thirdInfusion} mg</span></li>
                         
                     <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions and third infusions. To avoid using three infusions, please consider Monofer or Cosmofer </h5>
@@ -291,7 +288,7 @@ if(ironPrep==="Ferinject")
             if(finalWeight<35||patientActualHb>=140)
                 {finalCalculation= 500
                 
-                   message=`<div> <div id="single">A single infusion of ${finalCalculation}mg             is required.</div>
+                   message=`<div> <div id="single">A single infusion of <span class="finalCalc">${finalCalculation}mg</span> is required.</div>
                     
                         <h5> Add to maximum ${volume}ml 0.9% Sodium Chloride.</h5>
                     
@@ -384,7 +381,9 @@ else{
 }
 
   }
-  document.getElementById("cosmoferBtn").addEventListener("click",function (){
+  
+ 
+document.getElementById("cosmoferBtn").addEventListener("click",function (){
     calculate(cosmofer)
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
