@@ -264,6 +264,6 @@ font-size: medium;
    color:red;	}
 
 
-  .bounce { animation: bounce 0.8s infinite alternate; }
+  .bounce { animation: bounce 0.35s infinite alternate; }
     
-    @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-45px); } }
+    @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-65px); } }
