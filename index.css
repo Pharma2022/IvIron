@@ -256,6 +256,9 @@ font-size: medium;
     
 }
 #selection-message{
-    color: red;
+    
     margin-bottom: -50px;
 }
+
+#finalCalc, #selection-message{
+   color:red;	
