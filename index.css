@@ -260,5 +260,5 @@ font-size: medium;
     margin-bottom: -50px;
 }
 
-#finalCalc, #selection-message{
+.finalCalc, #selection-message{
    color:red;	
