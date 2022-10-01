@@ -116,8 +116,10 @@ female.addEventListener("click",function(e){
             finalWeight=90
         }
         
+
+        
         if (finalWeight*20<finalCalculation)
-            {firstInfusion= Math.round(finalWeight*20 / 100) * 100
+            {firstInfusion= Math.floor(finalWeight*20 / 100) * 100
             if (finalWeight.value>90){
             finalWeight=90 }
           
@@ -179,7 +181,7 @@ female.addEventListener("click",function(e){
             
               if (ironPrep=="Cosmofer"){
             
-            message=`<div> <div id="single">A single infusion of <span class="finalCalc>${finalCalculation}mg</span> is required.</div>
+            message=`<div> <div id="single">A single infusion of <span class="finalCalc">${finalCalculation}mg </span> is required.</div>
            
           <h5> Add to 500ml 0.9% Sodium Chloride.</h5>
            
