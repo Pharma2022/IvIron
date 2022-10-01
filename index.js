@@ -1,5 +1,5 @@
 // javascript
-let  patientGender= "Male"
+let  patientGender= ""
 const height=document.getElementById("height")
 const bodyWeight = document.getElementById("body-weight")
 const targetHb=document.getElementById("target-hb")
@@ -10,54 +10,52 @@ const ivIron= document.getElementById("ivIron")
 const reset= document.getElementById("reset")
 const male = document.getElementById("male")
 const female = document.getElementById("female")
+
+
+
+
+
 male.addEventListener("click",function(e){
     e.preventDefault()
-    
-    patientGender= male.value
-    console.log(patientGender)
-    female.style.backgroundColor="white"
-   female.style.color=  "darkslategray"
-      female.style.textShadow= " 0px 0px 0px black"
-    male.style.backgroundColor="darkslategray"
-    male.style.color= "white"
-        male.style.textShadow= " 0px 0px 4px black"
-
-    
-    
-}
-)
+            patientGender= male.value
+            console.log(patientGender)
+            female.style.backgroundColor="white"
+            female.style.color=  "darkslategray"
+            female.style.textShadow= " 0px 0px 0px black"
+                male.style.backgroundColor="darkslategray"
+                male.style.color= "white"
+                male.style.textShadow= " 0px 0px 4px black"})
+        
 female.addEventListener("click",function(e){
     e.preventDefault()
-    console.log(patientGender)
-   patientGender = female.value
-    console.log(patientGender)
-        male.style.backgroundColor="white"
-    male.style.color=  "darkslategray"
-    male.style.textShadow= " 0px 0px 0px black"
-    female.style.backgroundColor="darkslategray"
-    female.style.color= "white" 
-       female.style.textShadow= " 0px 0px 4px black" 
+            console.log(patientGender)
+            patientGender = female.value
+            console.log(patientGender)
+            male.style.backgroundColor="white"
+            male.style.color=  "darkslategray"
+            male.style.textShadow= " 0px 0px 0px black"
+                female.style.backgroundColor="darkslategray"
+                female.style.color= "white" 
+                female.style.textShadow= " 0px 0px 4px black" 
 }
 )
-reset.addEventListener("click",function(){
 
-    reset.style.display="none"
-})
+
 
         calculateDose.addEventListener("click",function(){
            
-                const patientHeight = JSON.parse(height.value)
-                const patientWeight= JSON.parse(bodyWeight.value)
-                const patientTargetHb= JSON.parse(targetHb.value)
-                const patientActualHb= JSON.parse(actualHb.value)
-                const myIron=ivIron.value
-                reset.style.display="block"
+                let patientHeight = JSON.parse(height.value)
+                let patientWeight= JSON.parse(bodyWeight.value)
+                let patientTargetHb= JSON.parse(targetHb.value)
+                let patientActualHb= JSON.parse(actualHb.value)
+                let myIron=ivIron.value
+                
         
-// for (let i= 0; i<myPatientParameters.length; i++){
-  //   console.log(myPatientParameters[i]+typeof myPatientParameters[i]) 
- //}    
+        
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb)&&(patientActualHb>=40&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
+    {    
         function render(){  renderDose.innerHTML=""
-                renderDose.innerHTML+= `
+                renderDose.innerHTML= `
                 
                 <h3><div> Calculated dose: for ${myIron}        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
                 <h4><div >Total Iron required is <span>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
@@ -125,6 +123,15 @@ reset.addEventListener("click",function(){
             finalWeight=90 }
           
             secondInfusion= finalCalculation-firstInfusion
+            if (secondInfusion>firstInfusion){
+                const mySecond= secondInfusion
+                const myFirst= firstInfusion
+                firstInfusion=mySecond
+                secondInfusion= myFirst
+                
+            }
+            
+            
             
             if (ivIron.value=="Cosmofer"){
             message = ` <div>
@@ -357,8 +364,20 @@ if(ivIron.value==="Ferinject")
         }
         render()
                 
-      
-
+    }
+else{
+     function renderError(){  renderDose.innerHTML=""
+                renderDose.innerHTML= `
+                
+                <h3><div> You have selected values outside the ranges </h3></div> 
+                
+              
+               <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters</h4>
+            
+                 
+                `}
+                renderError()
+}
 
   })
   
