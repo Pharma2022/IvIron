@@ -240,7 +240,7 @@ font-size: medium;
     flex-direction: column;
     text-align: left;
     border: 1px solid gray;
-    width: 800px;
+    width: 815px;
     margin-top: 0px;
     
 }
@@ -250,7 +250,8 @@ font-size: medium;
 #selection-container{
     display: flex;
     flex-direction: column;
-    margin:  auto;
+    width: 850px;
+    margin:  0px 80px;
     margin-bottom: -40px; 
     
 }
