@@ -6,14 +6,13 @@ const targetHb=document.getElementById("target-hb")
 const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
-const ivIron= document.getElementById("ivIron")
+
 const reset= document.getElementById("reset")
 const male = document.getElementById("male")
 const female = document.getElementById("female")
-
-
-
-
+const cosmofer="Cosmofer"
+const monofer="Monofer"
+const ferinject ="Ferinject"
 
 male.addEventListener("click",function(e){
     e.preventDefault()
@@ -42,13 +41,13 @@ female.addEventListener("click",function(e){
 
 
 
-        calculateDose.addEventListener("click",function(){
+      function calculate(ironPrep){
            
                 let patientHeight = JSON.parse(height.value)
                 let patientWeight= JSON.parse(bodyWeight.value)
                 let patientTargetHb= JSON.parse(targetHb.value)
                 let patientActualHb= JSON.parse(actualHb.value)
-                let myIron=ivIron.value
+                let myIron=ironPrep
                 
         
         
@@ -108,7 +107,7 @@ female.addEventListener("click",function(e){
         let secondInfusion= ""
         let message=""
         let testdose=""
-        if (ivIron.value=="Cosmofer"){
+        if (ironPrep=="Cosmofer"){
             testdose= `The first 25mg of the first infusion needs to be given as a <span>test dose</span> over 15 minutes.`
         } 
         
@@ -133,7 +132,7 @@ female.addEventListener("click",function(e){
             
             
             
-            if (ivIron.value=="Cosmofer"){
+            if (ironPrep=="Cosmofer"){
             message = ` <div>
         
             <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
@@ -143,7 +142,7 @@ female.addEventListener("click",function(e){
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
             </div>`}
             
-            if (ivIron.value=="Monofer"){
+            if (ironPrep=="Monofer"){
             message = ` <div>
         
             <li> First infusion: ${firstInfusion}mg</li><li>Second infusion: ${secondInfusion} mg</li>
@@ -159,7 +158,7 @@ female.addEventListener("click",function(e){
         else{ firstInfusion= finalCalculation
             testdose= ` The first 25mg of this infusion is to be given as a <span>test dose</span> over 15 minutes.`
             
-              if (ivIron.value=="Cosmofer"){
+              if (ironPrep=="Cosmofer"){
             
             message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
            
@@ -170,10 +169,10 @@ female.addEventListener("click",function(e){
            </div> `} 
          
            
-             if (ivIron.value==="Monofer" || ivIron.value==="Ferinject") 
+             if (ironPrep==="Monofer" || ironPrep==="Ferinject") 
         {
             testdose= `No test dose is required`
-               if(ivIron.value==="Monofer"){
+               if(ironPrep==="Monofer"){
                 
             message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
            
@@ -191,7 +190,7 @@ female.addEventListener("click",function(e){
             }
             
                    
-if(ivIron.value==="Ferinject")
+if(ironPrep==="Ferinject")
 
 
 {
@@ -379,6 +378,17 @@ else{
                 renderError()
 }
 
-  })
+  }
   
  
+document.getElementById("cosmoferBtn").addEventListener("click",function (){
+    calculate(cosmofer)
+})
+
+document.getElementById("monoferBtn").addEventListener("click",function (){
+    calculate(monofer)
+})
+
+document.getElementById("ferinjectBtn").addEventListener("click",function (){
+    calculate(ferinject)
+})
