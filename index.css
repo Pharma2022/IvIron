@@ -44,8 +44,8 @@ label{
 }
 input{   
     display: inline-block;
-    width: 145px;
-    height: 35px;
+    width: 144px;
+    height: 37px;
 	padding: 10px 16px;
 	margin-right:255px;
     margin-top:10px;
@@ -87,7 +87,7 @@ input{
 }
 #male{
        position:relative;
-	       right:0px;
+	       right:-18.5px;
 }
 
 
