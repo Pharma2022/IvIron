@@ -51,7 +51,6 @@ input{
     margin-top:10px;
     margin-bottom:0px;	
     font-size: larger;
-    border-radius: 4.6px;
     font-weight: bold;
     text-shadow: 0px;
     border: 2.5px solid darkslategray;
@@ -72,8 +71,8 @@ input{
     font-size:large;
     
        
-    width: 85px;
-    height: 40px;
+    width: 72px;
+    height: 37px;
     	
         text-align: center;
      padding: 0px  ;
