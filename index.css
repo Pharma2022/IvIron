@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5{
 	
 h4{
     margin: 30px 0px ;
-    margin-bottom: 15px;
+    
     padding: 5px 0px;
     
 }
@@ -101,7 +101,7 @@ input{
     border: 1px solid black;
 }
 #calculate-dose,#reset{
-    margin: 40px auto;
+    margin: 20px auto;
     width: 200px;
     padding: 12px 4px;
     text-align: center;
