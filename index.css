@@ -51,7 +51,7 @@ input{
     margin-top:10px;
     margin-bottom:0px;	
     font-size: larger;
-    border-radius: 4.6px;
+   
     font-weight: bold;
     text-shadow: 0px;
     border: 2.5px solid darkslategray;
@@ -88,7 +88,7 @@ input{
 }
 #male{
        position:relative;
-	       right:0px;
+	       right:-5px;
 }
 
 
