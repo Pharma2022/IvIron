@@ -140,7 +140,19 @@ female.addEventListener("click",function(e){
            <h5> Add the required quantity for each infusion to 500ml 0.9% Sodium Chloride.</h5>
            <h5> After giving the test dose , give over 4-6 hours</h5>
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
-            </div>`}
+            </div>`
+            
+             if (secondInfusion<100){
+            
+            message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
+           
+          <h5> Add to 500ml 0.9% Sodium Chloride.</h5>
+           
+           <h5> After giving the test dose , give the remainder of the infusion over 4-6 hours</h5>
+            
+           </div> `} 
+            
+            }
             
             if (ironPrep=="Monofer"){
             message = ` <div>
@@ -152,7 +164,16 @@ female.addEventListener("click",function(e){
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
             </div>`
             testdose=`No test dose is required`
-            }
+            
+            if(secondInfusion<100)
+                
+                 {  message=`<div> <div id="single">A single infusion of ${finalCalculation}mg is required.</div>
+           
+          <h5> Add to 100ml 0.9% Sodium Chloride.</h5>
+           
+           <h5> Give over 30 minutes</h5>
+            
+           </div> `   }
            
             } 
         else{ firstInfusion= finalCalculation
