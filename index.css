@@ -8,7 +8,7 @@
     display: flex;
     flex-direction:column; 
   
-    margin: 0 auto; 
+    margin: 0px auto; 
     font-family: 'Calibri', sans-serif;	
 }
 h1,h2,h3,h4,h5{
@@ -45,7 +45,7 @@ label{
 input{   
     display: inline-block;
     width: 145px;
-    height: 35px;
+    height: 37px;
 	padding: 10px 16px;
 	margin-right:255px;
     margin-top:10px;
@@ -72,8 +72,8 @@ input{
     font-size:large;
     
        
-    width: 85px;
-    height: 40px;
+    width: 72px;
+    height: 37px;
     	
         text-align: center;
      padding: 0px  ;
@@ -88,7 +88,7 @@ input{
 }
 #male{
        position:relative;
-	       right:-5px;
+	       right:-3px;
 }
 
 
