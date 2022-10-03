@@ -439,7 +439,7 @@ document.getElementById("ferinjectBtn").addEventListener("click",function (){
     document.getElementById("ferinjectBtn").style.backgroundColor="red"
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
-    
+    }, 3000);
    
 })
 
