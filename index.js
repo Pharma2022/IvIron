@@ -413,7 +413,7 @@ document.getElementById("cosmoferBtn").addEventListener("click",function (){
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="red"
-    },3000)
+    },3000);
     
     
 })
