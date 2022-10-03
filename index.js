@@ -408,12 +408,11 @@ else{
 document.getElementById("cosmoferBtn").addEventListener("click",function (){
     calculate(cosmofer)
     
-      document.getElementById("cosmoferBtn").classList.add("bounce")
+ 
     setTimeout(function(){
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="red"
-    document.getElementById("cosmoferBtn").classList.remove("bounce")
     },3000)
     
     
@@ -423,28 +422,25 @@ document.getElementById("monoferBtn").addEventListener("click",function (){
     calculate(monofer)
     
     
-      document.getElementById("monoferBtn").classList.add("bounce")
+     
     setTimeout(function(){
         document.getElementById("monoferBtn").style.backgroundColor="red"
-  
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
-  document.getElementById("monoferBtn").classList.remove("bounce")
+
 }, 3000);
     
 })
 
 document.getElementById("ferinjectBtn").addEventListener("click",function (){
     calculate(ferinject)
-    document.getElementById("ferinjectBtn").classList.add("bounce")
+   
     setTimeout(function(){
     document.getElementById("ferinjectBtn").style.backgroundColor="red"
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
-     document.getElementById("ferinjectBtn").classList.remove("bounce")},3000);
+    
    
 })
 
-function bounce(){
-    document.getElementsByClassName
-}
+
