@@ -407,34 +407,34 @@ else{
 
 document.getElementById("cosmoferBtn").addEventListener("click",function (){
     calculate(cosmofer)
-    setTimeout(function(){
+
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="red"
     
-    },3000);
+
     
     
 })
 
 document.getElementById("monoferBtn").addEventListener("click",function (){
     calculate(monofer)
-    setTimeout(function(){
+   
     document.getElementById("monoferBtn").style.backgroundColor="red"
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
  
-}, 3000);
+
     
 })
 
 document.getElementById("ferinjectBtn").addEventListener("click",function (){
     calculate(ferinject)
-    setTimeout(function(){
+
     document.getElementById("ferinjectBtn").style.backgroundColor="red"
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
-     },3000);
+
    
 })
 
