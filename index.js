@@ -42,7 +42,7 @@ female.addEventListener("click",function(e){
 
 
 
-      function calculate(ironPrep){
+      function calculate(ironPrep,patientGender){
            
                 let patientHeight = JSON.parse(height.value)
                 let patientWeight= JSON.parse(bodyWeight.value)
