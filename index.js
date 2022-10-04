@@ -20,7 +20,6 @@ if (male.style.backgroundColor="white"){
 male.addEventListener("click",function(e){
     e.preventDefault()
             patientGender= male.value
-            console.log(patientGender)
             female.style.backgroundColor="white"
             female.style.color=  "darkslategray"
             female.style.textShadow= " 0px 0px 0px black"
