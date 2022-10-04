@@ -65,9 +65,9 @@ input{
 .gender{
      margin-top:10px;
     margin-bottom:0px;
-    background: darkslategray;
-    color: white;
-    text-shadow: 0px 0px 4px black;
+      background:white;
+   color:  darkslategray;
+    text-shadow:  0px 0px 0px black;
     border: 1.5px solid darkslategray ;
     font-weight: bold;
     font-size:large;
@@ -83,9 +83,7 @@ input{
 #female{
     margin-right:255px;
     
-    background:white;
-   color:  darkslategray;
-    text-shadow:  0px 0px 0px black;
+  
 }
 #male{
        position:relative;
