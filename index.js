@@ -395,7 +395,7 @@ else{
                 <h3><div> You have selected values outside the ranges </h3></div> 
                 
               
-               <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters</h4>
+               <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clickd on a gender. If your patient's values fall outside the ranges, enter the values closest to the patient values within the range</h4>
             
                  
                 `}
