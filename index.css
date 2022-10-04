@@ -139,6 +139,16 @@ body{
    margin: 10px;
 }
 
+.color ul {
+    display: inline-block;
+    position: relative;
+    left: 365px;
+    bottom:52px;
+    color:purple;
+    list-style: none;
+    font-size: x-small;
+}
+
 h5{
     color: grey;
     margin: 0px auto;
