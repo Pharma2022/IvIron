@@ -8,6 +8,7 @@ const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
 
 const reset= document.getElementById("reset")
+
 const male = document.getElementById("male")
 const female = document.getElementById("female")
 const cosmofer="Cosmofer"
@@ -26,7 +27,7 @@ male.addEventListener("click",function(e){
                 male.style.backgroundColor="darkslategray"
                 male.style.color= "white"
                 male.style.textShadow= " 0px 0px 4px black"})
-        
+}
 female.addEventListener("click",function(e){
     e.preventDefault()
             console.log(patientGender)
@@ -52,7 +53,8 @@ female.addEventListener("click",function(e){
                 let myIron=ironPrep
                 
         
-        if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject")&&(patientGender===true))       
+        
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject")&&(patientGender===true))      
     {    
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
@@ -62,8 +64,7 @@ female.addEventListener("click",function(e){
               
                <h4 id="box">${testdose}</h4>
                 <h4 id="box"> ${message} </h4>
-                 <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. Prescribe
-                 <span>IV Chlorphenamine</span> 10mg up to QDS PRN, <span>IV Hydrocortisone </span> 100mg up to 500mg/24 hours and <span> IM Adrenaline 1 in 1000</span> PRN for any adverse reactions </h4>
+                <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. Prescribe <span>IV Chlorphenamine</span> 10mg up to QDS PRN, <span>IV Hydrocortisone </span> 100mg up to 500mg/24 hours and <span> IM Adrenaline 1 in 1000</span> PRN for any adverse reactions </h4>
                  
                 `}
         
@@ -439,4 +440,3 @@ document.getElementById("ferinjectBtn").addEventListener("click",function (){
 
    
 })
-
