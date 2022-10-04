@@ -14,6 +14,8 @@ const cosmofer="Cosmofer"
 const monofer="Monofer"
 const ferinject ="Ferinject"
 
+
+if (male.style.backgroundColor="white"){
 male.addEventListener("click",function(e){
     e.preventDefault()
             patientGender= male.value
@@ -50,8 +52,7 @@ female.addEventListener("click",function(e){
                 let myIron=ironPrep
                 
         
-        
-  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
+        if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject")&&(patientGender===true))       
     {    
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
