@@ -388,7 +388,7 @@ if(ironPrep==="Ferinject")
         render()
                 
     }
-else  if ((patientHeight<152||patientHeight>200)||(patientWeight<25||patientWeight>90)||(patientTargetHb<110||patientTargetHb>150||patientTargetHb<patientActualHb+10)||(patientActualHb<50||patientActualHb>150)||(patientGender===""))      
+else  
   {
      function renderError(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
