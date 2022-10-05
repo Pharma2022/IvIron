@@ -15,24 +15,25 @@ const monofer="Monofer"
 const ferinject ="Ferinject"
 
 
+
     male.addEventListener("click",function(e){
         e.preventDefault()
-       
-                patientGender= male.value
+        
+        if (male.style.backgroundColor="white"){
+        patientGender= male.value
                 console.log(patientGender)
                 female.style.backgroundColor="white"
                 female.style.color=  "darkslategray"
                 female.style.textShadow= " 0px 0px 0px black"
                     male.style.backgroundColor="darkslategray"
                     male.style.color= "white"
-                    male.style.textShadow= " 0px 0px 4px black"
-                    
+                    male.style.textShadow= " 0px 0px 4px black"}
                 }
                     )
-    
+   
     female.addEventListener("click",function(e){
         e.preventDefault()
-               
+                console.log(patientGender)
                 patientGender = female.value
                 console.log(patientGender)
                 male.style.backgroundColor="white"
@@ -56,7 +57,7 @@ const ferinject ="Ferinject"
                 
         
         
-  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject")&&(patientGender==="Male"||"Female"))      
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
     {    
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
@@ -392,21 +393,6 @@ if(ironPrep==="Ferinject")
         render()
                 
     }
-
-     if (patientGender="") {
-        function renderError(){  renderDose.innerHTML=""
-                   renderDose.innerHTML= `
-                   
-                   <h3><div> You have selected values outside the ranges </h3></div> 
-                   
-                 
-                   <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clicked on a <span class ="color">gender</span>. If your patient's values fall outside the above ranges, enter the values closest to the patient values within the range.</h4>
-               
-                    
-                   `}
-                   renderError()
-   }
-
 else{
      function renderError(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
