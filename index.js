@@ -6,17 +6,16 @@ const targetHb=document.getElementById("target-hb")
 const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
-
-const reset= document.getElementById("reset")
-
-const male = document.getElementById("male")
+let male=""
+if (document.getElementById("male").style.color="darkslategray")
+{ male = document.getElementById("male"}
 const female = document.getElementById("female")
 const cosmofer="Cosmofer"
 const monofer="Monofer"
 const ferinject ="Ferinject"
 
 
-if (male.style.backgroundColor="white"){
+if (male){
 male.addEventListener("click",function(e){
     e.preventDefault()
             patientGender= male.value
