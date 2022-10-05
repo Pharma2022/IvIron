@@ -7,32 +7,29 @@ const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
 
+const reset= document.getElementById("reset")
 const male = document.getElementById("male")
-
 const female = document.getElementById("female")
 const cosmofer="Cosmofer"
 const monofer="Monofer"
 const ferinject ="Ferinject"
 
-
-
 male.addEventListener("click",function(e){
-
     e.preventDefault()
-            
+            patientGender= male.value
+            console.log(patientGender)
             female.style.backgroundColor="white"
             female.style.color=  "darkslategray"
             female.style.textShadow= " 0px 0px 0px black"
                 male.style.backgroundColor="darkslategray"
                 male.style.color= "white"
-                male.style.textShadow= " 0px 0px 4px black"
-patientGender= male.value
-})
-
+                male.style.textShadow= " 0px 0px 4px black"})
+        
 female.addEventListener("click",function(e){
     e.preventDefault()
-            
+            console.log(patientGender)
             patientGender = female.value
+            console.log(patientGender)
             male.style.backgroundColor="white"
             male.style.color=  "darkslategray"
             male.style.textShadow= " 0px 0px 0px black"
@@ -42,12 +39,9 @@ female.addEventListener("click",function(e){
 }
 )
 
-if (patientGender ==="Female")    { let factor =45.5}
-                    if (patientGender==="Male")  { let factor =50
- }
 
 
-      function calculate(ironPrep,patientGender){
+      function calculate(ironPrep){
            
                 let patientHeight = JSON.parse(height.value)
                 let patientWeight= JSON.parse(bodyWeight.value)
@@ -55,7 +49,6 @@ if (patientGender ==="Female")    { let factor =45.5}
                 let patientActualHb= JSON.parse(actualHb.value)
                 let myIron=ironPrep
                 
-
         
         
   if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
@@ -73,8 +66,9 @@ if (patientGender ==="Female")    { let factor =45.5}
                 `}
         
         let bmi= patientWeight*10000/(patientHeight*patientHeight)
-        
-                            
+        let factor = 50
+                    if (patientGender == "Female")    {  factor =45.5    }
+                    else if (patientGender=="Male")  { factor =50}        
         let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
         let ddw= ibw+ 0.4*(patientWeight-ibw)
         console.log("ddw= "+ddw+ " ibw= "+ibw)
@@ -393,15 +387,14 @@ if(ironPrep==="Ferinject")
         render()
                 
     }
-else  
-  {
+else{
      function renderError(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
                 <h3><div> You have selected values outside the ranges </h3></div> 
                 
               
-               <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clicked on a <span class ="color">gender</span>. If your patient's values fall outside the above ranges, enter the values closest to the patient values within the range.</h4>
+                <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clicked on a <span class ="color">gender</span>. If your patient's values fall outside the above ranges, enter the values closest to the patient values within the range.</h4>
             
                  
                 `}
