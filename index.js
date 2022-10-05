@@ -51,7 +51,10 @@ female.addEventListener("click",function(e){
                 let patientTargetHb= JSON.parse(targetHb.value)
                 let patientActualHb= JSON.parse(actualHb.value)
                 let myIron=ironPrep
-                
+                let factor = 50
+if (patientGender == "Female")    {  factor =45.5    }
+                    if (patientGender=="Male")  { factor =50}
+
         
         
   if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
@@ -69,9 +72,8 @@ female.addEventListener("click",function(e){
                 `}
         
         let bmi= patientWeight*10000/(patientHeight*patientHeight)
-        let factor = 50
-                    if (patientGender == "Female")    {  factor =45.5    }
-                    else if (patientGender=="Male")  { factor =50}        
+        
+                            
         let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
         let ddw= ibw+ 0.4*(patientWeight-ibw)
         console.log("ddw= "+ddw+ " ibw= "+ibw)
