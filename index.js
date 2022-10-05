@@ -51,9 +51,11 @@ female.addEventListener("click",function(e){
                 let patientTargetHb= JSON.parse(targetHb.value)
                 let patientActualHb= JSON.parse(actualHb.value)
                 let myIron=ironPrep
-                let factor = 50
-if (patientGender == "Female")    {  factor =45.5    }
-                    if (patientGender=="Male")  { factor =50}
+                
+if (patientGender == "Female")    { let factor =45.5
+  return factor  }
+                    if (patientGender=="Male")  {let factor =50
+ return factor}
 
         
         
