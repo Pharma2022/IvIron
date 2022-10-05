@@ -18,7 +18,7 @@ const ferinject ="Ferinject"
 if (male){
 male.addEventListener("click",function(e){
     e.preventDefault()
-            patientGender= male.value
+            
             female.style.backgroundColor="white"
             female.style.color=  "darkslategray"
             female.style.textShadow= " 0px 0px 0px black"
@@ -26,6 +26,7 @@ male.addEventListener("click",function(e){
                 male.style.color= "white"
                 male.style.textShadow= " 0px 0px 4px black"})
 }
+patientGender= male.value
 female.addEventListener("click",function(e){
     e.preventDefault()
             
