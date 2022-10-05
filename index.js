@@ -7,43 +7,37 @@ const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
 
-
+const reset= document.getElementById("reset")
 const male = document.getElementById("male")
 const female = document.getElementById("female")
 const cosmofer="Cosmofer"
 const monofer="Monofer"
 const ferinject ="Ferinject"
 
-
-
-    male.addEventListener("click",function(e){
-        e.preventDefault()
+male.addEventListener("click",function(e){
+    e.preventDefault()
+            patientGender= male.value
+            console.log(patientGender)
+            female.style.backgroundColor="white"
+            female.style.color=  "darkslategray"
+            female.style.textShadow= " 0px 0px 0px black"
+                male.style.backgroundColor="darkslategray"
+                male.style.color= "white"
+                male.style.textShadow= " 0px 0px 4px black"})
         
-        if (male.style.backgroundColor="white"){
-        patientGender= male.value
-                console.log(patientGender)
-                female.style.backgroundColor="white"
-                female.style.color=  "darkslategray"
-                female.style.textShadow= " 0px 0px 0px black"
-                    male.style.backgroundColor="darkslategray"
-                    male.style.color= "white"
-                    male.style.textShadow= " 0px 0px 4px black"}
-                }
-                    )
-   
-    female.addEventListener("click",function(e){
-        e.preventDefault()
-                console.log(patientGender)
-                patientGender = female.value
-                console.log(patientGender)
-                male.style.backgroundColor="white"
-                male.style.color=  "darkslategray"
-                male.style.textShadow= " 0px 0px 0px black"
-                    female.style.backgroundColor="darkslategray"
-                    female.style.color= "white" 
-                    female.style.textShadow= " 0px 0px 4px black" 
-    }
-    )
+female.addEventListener("click",function(e){
+    e.preventDefault()
+            console.log(patientGender)
+            patientGender = female.value
+            console.log(patientGender)
+            male.style.backgroundColor="white"
+            male.style.color=  "darkslategray"
+            male.style.textShadow= " 0px 0px 0px black"
+                female.style.backgroundColor="darkslategray"
+                female.style.color= "white" 
+                female.style.textShadow= " 0px 0px 4px black" 
+}
+)
 
 
 
