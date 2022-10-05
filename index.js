@@ -15,7 +15,7 @@ const monofer="Monofer"
 const ferinject ="Ferinject"
 
 
-if (male){
+if (male.value="male"){
 male.addEventListener("click",function(e){
     e.preventDefault()
             
