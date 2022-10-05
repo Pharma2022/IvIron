@@ -19,14 +19,14 @@ const ferinject ="Ferinject"
 male.addEventListener("click",function(e){
 
     e.preventDefault()
-            if (male.value==="male"&& male.style.color===  "darkslategray")
-           { female.style.backgroundColor="white"
+            
+            female.style.backgroundColor="white"
             female.style.color=  "darkslategray"
             female.style.textShadow= " 0px 0px 0px black"
                 male.style.backgroundColor="darkslategray"
                 male.style.color= "white"
                 male.style.textShadow= " 0px 0px 4px black"}
-patientGender= male.value})
+patientGender= male.value)
 }
 
 female.addEventListener("click",function(e){
