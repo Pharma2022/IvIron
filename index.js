@@ -14,7 +14,7 @@ const cosmofer="Cosmofer"
 const monofer="Monofer"
 const ferinject ="Ferinject"
 
-
+let factor =0
 
 male.addEventListener("click",function(e){
 
@@ -42,6 +42,9 @@ female.addEventListener("click",function(e){
 }
 )
 
+if (patientGender ==="Female")    { factor =45.5}
+                    if (patientGender==="Male")  { factor =50
+ }
 
 
       function calculate(ironPrep,patientGender){
@@ -52,10 +55,6 @@ female.addEventListener("click",function(e){
                 let patientActualHb= JSON.parse(actualHb.value)
                 let myIron=ironPrep
                 
-if (patientGender == "Female")    { let factor =45.5
-  return factor  }
-                    if (patientGender=="Male")  {let factor =50
- return factor}
 
         
         
