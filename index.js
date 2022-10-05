@@ -6,9 +6,14 @@ const targetHb=document.getElementById("target-hb")
 const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
-let male=""
+
 if (document.getElementById("male").style.color="darkslategray")
-{ male = document.getElementById("male")}
+{ let male = document.getElementById("male")
+return male}
+else {
+let male=""
+return male
+}
 const female = document.getElementById("female")
 const cosmofer="Cosmofer"
 const monofer="Monofer"
