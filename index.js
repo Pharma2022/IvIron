@@ -7,7 +7,7 @@ const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
 
-let male = document.getElementById("male")
+const male = document.getElementById("male")
 
 const female = document.getElementById("female")
 const cosmofer="Cosmofer"
@@ -25,9 +25,9 @@ male.addEventListener("click",function(e){
             female.style.textShadow= " 0px 0px 0px black"
                 male.style.backgroundColor="darkslategray"
                 male.style.color= "white"
-                male.style.textShadow= " 0px 0px 4px black"}
-patientGender= male.value)
-}
+                male.style.textShadow= " 0px 0px 4px black"
+patientGender= male.value
+})
 
 female.addEventListener("click",function(e){
     e.preventDefault()
