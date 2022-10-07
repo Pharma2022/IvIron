@@ -1,28 +1,19 @@
 body{
 margin:0;
 padding:0;
-	width:100%;
-	height:auto;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .container{
  
     border: 3px solid darkslategray;
     height:auto;
-  
-    min-width:100%;
-	max-width:100%;
-	
-   width:100%;	
+  width:900px;	
+    min-width:900px;
+    max-width:900px;	
     display: flex;
     flex-direction: column;
-    margin: 0px auto ; 
-    margin-bottom: -180px;
-	
+    margin: 0px auto; 
+    margin-bottom: -180x;
     font-family: 'Calibri', sans-serif;	
 }
 h1,h2,h3,h4,h5{
@@ -51,7 +42,7 @@ label{
     width: 190px;
     margin-top:10px;	
 
-    margin-left: 205px;
+    margin-left: 255px;
 	
     font-weight: bolder;
    
@@ -62,7 +53,7 @@ input{
     width: 145px;
     height: 37px;
 	padding: 10px 16px;
-	margin-right:205px;
+	margin-right:255px;
     margin-top:10px;
     margin-bottom:0px;	
     font-size: larger;
@@ -93,7 +84,7 @@ input{
           justify-content:center;
 }
 #female{
-    margin-right:205px;}
+    margin-right:255px;}
  #female,#male{   
     background-color:white;
    color:  darkslategray;
@@ -115,8 +106,8 @@ input{
     border: 1px solid black;
 }
 #ferinjectBtn,#monoferBtn,#cosmoferBtn{
-    margin: 40px 10px;
-    width: 120px;
+    margin: 40px 20px;
+    width: 140px;
     padding: 12px 4px;
     text-align: center;
     border-radius: 8px;
@@ -125,7 +116,7 @@ input{
     text-shadow: 0px 0px 4px black;
     border: 1px solid black ;
     font-weight: bold;
-    font-size:large;
+    font-size:x-large;
     
 }
 #calculate{
@@ -154,7 +145,7 @@ body{
 .color ul {
     display: inline-block;
     position: relative;
-    left: 345px;
+    left: 365px;
     bottom:55px;
     color: brown;
     list-style: none;
@@ -199,12 +190,14 @@ height:28px;
   
 }
 
-
+.underline{
+    
+}
 #shah{
     
     display: inline-block;
-    min-width:700px;
-    width: 700px;
+    min-width:800px;
+    width: 800px;
     align-self: center;
     padding: 20px 25px;
     margin: 0px auto;
@@ -267,7 +260,7 @@ font-size: medium;
     flex-direction: column;
     text-align: left;
     border: 1px solid gray;
-    width: 765px;
+    width: 815px;
     margin-top: 0px;
     
 }
@@ -277,8 +270,8 @@ font-size: medium;
 #selection-container{
     display: flex;
     flex-direction: column;
-    width: 700px;
-    margin:  0px 40px;
+    width: 800px;
+    margin:  0px 80px;
     margin-bottom: -40px; 
     
 }
