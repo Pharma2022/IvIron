@@ -172,8 +172,8 @@ header{
 
 .minMax{
     color: gray;
-    display: inline-block;
- 
+    display: flex;
+    flex-direction: row;
     font-style: italic;
     font-size: smaller;
     width:220px;
