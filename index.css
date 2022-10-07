@@ -264,7 +264,7 @@ font-size: medium;
 #selection-container{
     display: flex;
     flex-direction: column;
-    width: 850px;
+    width: 800px;
     margin:  0px 80px;
     margin-bottom: -40px; 
     
