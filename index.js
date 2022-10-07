@@ -276,7 +276,7 @@ if(ironPrep==="Ferinject")
                  message = ` <div>
                         <li> First infusion:<span class="finalCalc"> ${firstInfusion}mg</span></li><li>Second infusion:<span class="finalCalc"> ${secondInfusion} mg</span></li>
                         
-                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
+                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
                      <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
                 
