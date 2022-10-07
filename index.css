@@ -1,11 +1,11 @@
 body{
 margin:0;
 padding:0;
-	box-sizing:border-box;
+	
 }
 
 .container{
- 
+ box-sizing:border-box;
     border: 3px solid darkslategray;
     height:auto;
   width:900px;	
