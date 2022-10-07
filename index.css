@@ -6,11 +6,8 @@
     min-width:900px;
     max-width:900px;	
     display: flex;
-    flex-direction:column; 
-    position:absolute;
-	left:0;
-	right:0:
-    margin: 0; 
+    
+    margin: 0px auto; 
     font-family: 'Calibri', sans-serif;	
 }
 h1,h2,h3,h4,h5{
@@ -175,8 +172,8 @@ header{
 
 .minMax{
     color: gray;
-    display: inline-flex;
-    flex-direction: row;
+    display: inline-block;
+ 
     font-style: italic;
     font-size: smaller;
     width:220px;
