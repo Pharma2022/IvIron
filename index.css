@@ -1,6 +1,7 @@
 body{
 margin:0;
 padding:0;
+	padding-bottom:-180px;
 }
 
 .container{
@@ -15,6 +16,7 @@ padding:0;
     margin: 0px auto; 
     margin-bottom: -180x;
     font-family: 'Calibri', sans-serif;	
+	
 }
 h1,h2,h3,h4,h5{
 	    font-family: 'Calibri', sans-serif;	
