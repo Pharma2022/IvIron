@@ -1,39 +1,42 @@
 
 * {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-}
-html{
-	overflow-x:hidden;
-	scroll-behaviour:smooth;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
 }
 
+
+html{
+    padding:0;
+    margin: 0;
+    overflow-x: hidden;
+   
+}
 body{
 margin:0;
 padding:0;
-	height:100%;
-	max-height:100%;
-	width:100%;
-		
-		min-width:100%;
-overflow-x:hidden;
-		
+min-width: 100%;
+font-family: 'Calibri', sans-serif;	
+min-height: 100%;
+overflow-x: hidden;
+
 }
 
 .container{
- 
+
     border: 3px solid darkslategray;
+    
     height:auto;
-  width:900px;	
-    min-width:900px;
-    max-width:900px;	
+    min-height: 100%;
+    width:100%	
+        min-width 100%;	
     display: flex;
     flex-direction: column;
-    margin: 0px auto; 
+    margin: 0px ; 
+    padding: 0px;
     
-    font-family: 'Calibri', sans-serif;	
-    overflow-x:hidden;
+   
 }
 h1,h2,h3,h4,h5{
 	    font-family: 'Calibri', sans-serif;	
@@ -55,24 +58,27 @@ h4{
 
 
 label{
-    display: inline-block;
+    display: inline;
     height: 45px;
    
     width: 190px;
+    max-width: 190px;
     margin-top:10px;	
 
-    margin-left: 255px;
-	
+    margin-left:475px;
+	margin-right: auto;
     font-weight: bolder;
    
      font-family: 'Calibri', sans-serif;		
 }
 input{   
-    display: inline-block;
+    display: inline;
     width: 145px;
+    max-width: 145px;
     height: 37px;
 	padding: 10px 16px;
-	margin-right:255px;
+    margin-left:auto;
+	margin-right:475px;
     margin-top:10px;
     margin-bottom:0px;	
     font-size: larger;
@@ -84,6 +90,16 @@ input{
     background: white;
     color: darkslategray;
     text-align: center;	
+}
+
+
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-width: 100%;
+    max-width: 100%;
+    
 }
 
 .gender{
@@ -103,7 +119,7 @@ input{
           justify-content:center;
 }
 #female{
-    margin-right:255px;}
+    margin-right:475px;}
  #female,#male{   
     background-color:white;
    color:  darkslategray;
@@ -111,22 +127,25 @@ input{
 }
 #male{
        position:relative;
-	       right:-18px;
+	       left:0px;
 }
 
 
 
 
 .iConfirm{
-    margin: 0px 40px;
+    height: auto;
+    margin: 0px auto;
     margin-top: 25px;
     background: lightgrey;
     padding: 20px;    
     border: 1px solid black;
+    width: 765px;
+    max-width: 765px;
 }
 #ferinjectBtn,#monoferBtn,#cosmoferBtn{
-    margin: 40px 20px;
-    width: 140px;
+    margin: 40px 10px;
+    width: 120px;
     padding: 12px 4px;
     text-align: center;
     border-radius: 8px;
@@ -135,7 +154,7 @@ input{
     text-shadow: 0px 0px 4px black;
     border: 1px solid black ;
     font-weight: bold;
-    font-size:x-large;
+    font-size:large;
     
 }
 #calculate{
@@ -164,7 +183,7 @@ body{
 .color ul {
     display: inline-block;
     position: relative;
-    left: 365px;
+    left: 345px;
     bottom:55px;
     color: brown;
     list-style: none;
@@ -209,15 +228,14 @@ height:28px;
   
 }
 
-.underline{
-    
-}
+
 #shah{
     
-    display: inline-block;
-    min-width:800px;
-    width: 800px;
-    align-self: center;
+    display: block;
+    min-width:700px;
+    width: 700px;
+    height: auto;
+   
     padding: 20px 25px;
     margin: 0px auto;
 }
@@ -279,7 +297,7 @@ font-size: medium;
     flex-direction: column;
     text-align: left;
     border: 1px solid gray;
-    width: 815px;
+    width: 765px;
     margin-top: 0px;
     
 }
@@ -289,8 +307,11 @@ font-size: medium;
 #selection-container{
     display: flex;
     flex-direction: column;
-    width: 800px;
-    margin:  0px 80px;
+    height: auto;
+    width: 765px;
+    padding-left: 40px;
+    margin:  0px auto;
+  
     margin-bottom: -40px; 
     
 }
