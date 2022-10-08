@@ -1,8 +1,4 @@
-*{
-    box-sizing: border-box;
-    overflow-x: hidden;
-    
-}
+
 
 body{
 margin:0;
@@ -13,10 +9,10 @@ overflow-x: hidden;
 }
 
 .container{
- 
+ box-sizing:borderbox;
     border: 3px solid darkslategray;
     min-height: 1300px;
-    height:fit-content;
+   
   width:900px;	
     min-width:900px;
     max-width:900px;	
