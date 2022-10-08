@@ -1,4 +1,15 @@
-body,html{
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+html{
+	overflow-x:hidden;
+	scroll-behaviour:smooth;
+}
+
+body{
 margin:0;
 padding:0;
 	height:100%;
@@ -11,7 +22,7 @@ overflow-x:hidden;
 }
 
 .container{
- box-sizing:border-box;
+ 
     border: 3px solid darkslategray;
     height:auto;
   width:900px;	
@@ -22,7 +33,7 @@ overflow-x:hidden;
     margin: 0px auto; 
     margin-bottom: -180x;
     font-family: 'Calibri', sans-serif;	
-    overflow:hidden;
+    overflow-x:hidden;
 }
 h1,h2,h3,h4,h5{
 	    font-family: 'Calibri', sans-serif;	
