@@ -1,14 +1,19 @@
+body{
+margin:0;
+padding:0;
+}
+
 .container{
-    padding-bottom: 20px;
+ 
     border: 3px solid darkslategray;
     height:auto;
   width:900px;	
     min-width:900px;
     max-width:900px;	
     display: flex;
-    flex-direction:column; 
-  
+    flex-direction: column;
     margin: 0px auto; 
+    margin-bottom: -180x;
     font-family: 'Calibri', sans-serif;	
 }
 h1,h2,h3,h4,h5{
@@ -65,9 +70,7 @@ input{
 .gender{
      margin-top:10px;
     margin-bottom:0px;
-    background: darkslategray;
-    color: white;
-    text-shadow: 0px 0px 4px black;
+    
     border: 1.5px solid darkslategray ;
     font-weight: bold;
     font-size:large;
@@ -81,9 +84,9 @@ input{
           justify-content:center;
 }
 #female{
-    margin-right:255px;
-    
-    background:white;
+    margin-right:255px;}
+ #female,#male{   
+    background-color:white;
    color:  darkslategray;
     text-shadow:  0px 0px 0px black;
 }
@@ -139,6 +142,17 @@ body{
    margin: 10px;
 }
 
+.color ul {
+    display: inline-block;
+    position: relative;
+    left: 365px;
+    bottom:55px;
+    color: brown;
+    list-style: none;
+    font-size: x-small;
+    text-shadow: 0px 0px 0px black;
+}
+
 h5{
     color: grey;
     margin: 0px auto;
@@ -164,12 +178,13 @@ header{
 
 .minMax{
     color: gray;
-    display: flex;
-    flex-direction: row;
+    display: block;
     font-style: italic;
     font-size: smaller;
-    width:220px;
-height:25px;
+    min-width:220px;
+ width:220px;
+
+height:28px;
 
 
   
@@ -255,7 +270,7 @@ font-size: medium;
 #selection-container{
     display: flex;
     flex-direction: column;
-    width: 850px;
+    width: 800px;
     margin:  0px 80px;
     margin-bottom: -40px; 
     
@@ -269,6 +284,11 @@ font-size: medium;
    color:red;	}
 
 
-  .bounce { animation: bounce 0.35s infinite alternate; }
-    
-    @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-65px); } }
+ 
+.mr{
+	margin-right:60px;
+}
+	
+	
+	
+	
