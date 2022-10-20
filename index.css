@@ -4,25 +4,30 @@ html{
     font-family: 'Lato', sans-serif;}
 
 body{
-    background: white;
+ 
+   
     color: black;
     text-shadow: 0em ; 
        font-family: 'Lato', sans-serif;	
-       margin: 0;
-    padding: 0;}
+     align-items: center;
+       margin: 0 ;
+    padding: 0;
+width: 100%;
+}
+    
 
 .container{
-    padding-bottom: 1.25em;
-    border: 0.25em solid darkslategray;
-    height:auto;
-    width: auto;
-
-    max-width: 50em;	
-    display: flex;
+    min-height:100%;
+    max-height: fit-content;
+    min-width: 100%;
+width: auto;
+    display: inline-flex;
     flex-direction:column; 
+   
     margin: 0em auto; 
     text-align: center;
-    	
+    border: 0.25em solid darkslategray;
+    
 }
 h1,h2,h3,h4,h5{
 	    font-family: 'Lato', sans-serif;	
@@ -30,10 +35,12 @@ h1,h2,h3,h4,h5{
 	
 h1{
     font-weight: 900pt;
+    padding-bottom: 1em;
+    margin-bottom: 0;
 }
 h2,h3,h4,h5{
     font-family: 'Lato', sans-serif;
-    font-weight: 500pt;	
+    font-weight: 400pt;	
 }
 
 h4{
@@ -44,81 +51,89 @@ h4{
 }
 
 
-.inputLabel,.inputRow{
-    
-    width: 90%;
-    height: auto;
-    margin: 0em auto;
-  
-}
+
 .inputLabel{
-    display: inline-flex;
-    justify-content: center;
-    width: 90%;
+    display:    flex;
+    
+    justify-content: space-evenly;
+    height: 92.5%;
+    width: 92.5%;
     padding: 1em;
     margin: 0em 2em;
     text-align: center  ;
-    
+
 }
 
-
-.inputRow{
-    
-    min-height: 4.5em;	
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;}
-
-.label{
-    
-margin: 0;
-padding: 0;
-transform: translateX(2em);
-    
-}
 .label,.input{
-    min-width: 35%;
-    max-width: 50%;
     display: inline-flex;
     flex-direction: column;
-    margin: 0.125em 1.25em;
+    min-width: 40%;
+    max-width: 50%;
+    margin: 0.25em auto;
     text-align: center;
     align-content: center;
     justify-content: space-around;
+    padding: 1.5em;  
+}
+.input{ 
+    height:100%;
+}
+
+
+
+.labelMinMax{
+    display: inline-flex;
+    padding: 1rem;
+	text-indent: 5em;
+    transform: translateX(2.5em);
+    text-align: center;
+ 
+    justify-content: center;
+    justify-items: center;
+    width:80%;
+  height: auto;
+    margin: 0em auto;
     
 }
 
-.labelMinMax{
-    text-align: center;
-   
-    justify-content: center;
-    justify-items: center;
+.inputRow{
+     display: inline-flex;
+    padding: 1rem;
     
+    width: 25rem;
+    height: auto;
+    margin: 0.25em auto;
+    
+    height: 8.5em;	
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-7em);
 }
 
 label{
-    display: inline-block;
-   
-    min-height: 2.5125em;
-    max-height: 2.5125em;
+    display: inline-flex;
+    flex-direction: column;
+
+    min-height: 100%;
+    max-height: 100%;
    text-align: left;
    
-   min-width: 45%;
-   max-width: 75%;
-   transform: translateX(2.5em);
+   min-width: 10em;
+   max-width: 10em;
+ 
     /* margin-top:0.625em;	
 
     margin-left: 6em;*/
 	
     font-weight: bolder;
    margin: 0em auto;
-     		
+     		font-size: xx-large;
 }
 
 input{   
     display: inline-block;
-        min-height: 2.5125em;
-        max-height: 2.5125em;
+    
     min-width: 67%;
     max-width: 67%;
   
@@ -127,8 +142,8 @@ input{
     margin-top:0.625em;
     margin-bottom:0em;*/
 		margin: 0em auto;
-    font-size: larger;
-    margin: 0.25em 0;
+    font-size: xx-large;
+    margin: 0.125em 0;
     font-weight: bold;
     text-shadow: 0em;
     border: 0.15em solid darkslategray;
@@ -136,8 +151,9 @@ input{
     background: white;
     color: darkslategray;
     text-align: center;	
-    transform: translateX(-1.25em);
+
 }
+
 
 
 
@@ -151,22 +167,22 @@ input{
     
    
     
-    margin-bottom:0em;
+   margin: 0;
+   
     border: 0.15em solid darkslategray ;
     font-weight: bold;
-    font-size:large;
+    font-size:xx-large;
     
-       
-    min-width: 4.25em;
-    max-width: 4.25em;
-    min-height: 2.5125em;
-    max-height: 2.5125em;
+       width: auto;
+  min-width: 2.15em;
+  max-width: 2.15em;
+   height: auto;
    
-        text-align: center;
-     padding: 0em   ;
+        text-align: left;
+     padding: 0.5em    ;
+    
      align-content: center;
           justify-content:center;
-          transform: translateX(-1.45em);
 }
 
  #female,#male{   
@@ -178,15 +194,22 @@ input{
 #male{
     position: relative;
     right: -0.1em;
+    padding-left:1em;
+    padding-right: 3em;
+}
+
+#female{
+    padding-right: 4em;
+    padding-left: 1em;
 }
 
 
 
 
 #ferinjectBtn,#monoferBtn,#cosmoferBtn{
-    margin: 2.5em 0.25em;
-    width: 6.75em;
-    padding: 0.375em 0.15em;
+    margin: 2.5rem 1.25rem;
+    width: 9rem;
+    padding: 0.75rem 0.25rem ;
     text-align: center;
     border-radius: 0.5em;
     background: darkslategray;
@@ -194,7 +217,7 @@ input{
     text-shadow: 0em 0em 0.25em black;
     border: 0.0625em solid black ;
     font-weight: bold;
-    font-size:large;
+    font-size:x-large;
     align-content: center;
     
 }
@@ -249,17 +272,17 @@ header{
 }
 
 .minMax{
-    display: inline-flex;
-    flex-direction:column;
+    display: inline;
+    
     color: gray;
-    display: flex;
-    flex-direction: row;
+  
     font-style: italic;
     font-size: smaller;
-    width:13.75em;
+    
+    width: 100%;
     text-align: left;
-height:1.5625em;
-margin: 0em auto;
+height: auto;
+padding: 0;
 
 
 
@@ -271,13 +294,13 @@ margin: 0em auto;
 
 #shah{
     
-    display: block;
-    flex-direction: column;
+    display: inline-block;
+ 
     align-self: center;
     padding: 1.25em 1.5625em;
     margin: 0em auto;
-    margin-left: 0;
-    min-width: 40%; 
+  
+    min-width: 50em;
     max-width: 50em;
 }
 #render-dose{
@@ -285,6 +308,8 @@ margin: 0em auto;
     display: inline-block;
     padding: 1.25em;
     margin: -1.25em auto;
+    max-width: 80%;
+    font-size: x-large;
 }
 #render-dose h4{
     margin: 1.25em;
@@ -310,7 +335,7 @@ margin: 0em auto;
 
 
 .references{
-font-size: medium;
+font-size: large;
 
 
 
@@ -327,15 +352,16 @@ font-size: medium;
 
 .iConfirm{
     margin: 0em 2.5em;
-    margin-top: 1.5625em;
+
     background: lightgrey;
     padding: 1.25em;    
     border: 0.0625em solid black;
     min-width: 40%; 
-    max-width: 90%;
+    max-width: 70%;
+    font-size: x-large;
     
-    
-    text-align: justify;
+    align-self: center;
+    text-align: left;
 }
 
 
@@ -346,8 +372,9 @@ font-size: medium;
     margin:  0em auto ;
     margin-bottom: -2.5em ; 
     min-width: 40%; 
-    max-width: 90%;
+    max-width: 75%;
     text-align: justify;
+    font-size: larger;
     
 }
 #selection-message{
@@ -367,6 +394,7 @@ font-size: medium;
     font-weight: bold;
     margin-top: -1.25em;
     margin-bottom: 0.625em;
+    font-size: large;
     
 }
 #references{
@@ -376,8 +404,8 @@ font-size: medium;
     flex-direction: column;
     text-align: left;
     border: 0.0625em solid gray;
-   
+    font-size: medium;
     margin-top: 0px;
     min-width: 40%; 
-    max-width: 90%;   
+    max-width: 75%;
 }
