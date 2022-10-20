@@ -1,7 +1,11 @@
 <html>
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        
-        <link rel="stylesheet" href="index.css">
+      
+      <link rel="stylesheet" href="index.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+       
        
         
     </head>
@@ -10,22 +14,61 @@
         <div class= "container">
        <header> <h1>Intravenous Iron Calculator</h1></header>
           <form id ="form">
-            <span class= "color">   <label for "gender"> Gender  <span class= "minMax" id="male/female"> Male/Female</span>  </label>
+            <div class ="inputLabel">
+            <div class = "label">
+                      
+              <div class ="labelMinMax">
+                 <span class= "color">   <label for "gender"> Gender  <span class= "minMax" id="male/female"> Male/Female</span>  </label></span>
+             </div>
+             <div class = "labelMinMax">
+                 <span class= "color" > <label for "height">Height (cm)<span class= "minMax">152cm- 200cm</span></label></span>
+                </div>
+                 <div class ="labelMinMax">   
+                    <span class="color"> <label for "body-weight">Weight (kg)<span class= "minMax">25-90kg</span></label></span>
+             </div>
+             <div class ="labelMinMax">
+                    <span class="color"> <label for"target-hb">Target Hb (g/L)<span class= "minMax">110-150g/L </span></label></span>
+             </div>
+                  
+            <div class ="labelMinMax" >      
+                    <span class="color"> <label for "actual-hb" id =>Actual Hb (g/L)<span class= "minMax">50g/L-140g/L</span></label></span>
+            </div>  
+                  
+            </div>
+            
+              <div class="input">
+                
+                <div class="inputRow" ><button class ="gender" id ="male" value= "Male" name="gender" aria-required="true">Male</button><button class = "gender" id = "female" value = "Female" name = "gender" aria-required= "true">Female</button>
+                    </div >
+                <div class="inputRow" ><input type ="number" id = "height" min = "152" max ="200" required>
+                    </div >
+                <div class="inputRow" ><input type ="number" id = "body-weight" min = "25" max ="90" required>
+                    </div >
+                <div class="inputRow"  ><input type ="number" id= "target-hb" min= "110" max="150" required > 
+                     </div > 
+                    <div class="inputRow" ><input type ="number" id = "actual-hb" min = "50" max= "140" required> 
+                    </div >
+               
+                
+              </div>
+            </div>
                         
-                        <button class ="gender" id ="male" value= "Male" name="gender" aria-required="true">Male</button><button class = "gender" id = "female" value = "Female" name = "gender" aria-required= "true">Female</button>
-                        
+                                                
                      
                     
 
           
-            </span>
-                <span class= "color" ><label for "height">Height (cm)<span class= "minMax">152cm- 200cm</span></label><input type ="number" id = "height" min = "152" max ="200" required> </span>
+            
+
+              
+
+
                 
-                <span class="color"> <label for "body-weight">Weight (kg)<span class= "minMax">25-90kg</span></label><input type ="number" id = "body-weight" min = "25" max ="90" required> </span>
                 
-                <span class="color"> <label for"target-hb">Target Hb (g/L)<span class= "minMax">110-150g/L </span><ul class = "minMax">Recommended:<li>Men 130g/L</li><li>Women 120g/L</li></ul></label><input type ="number" id= "target-hb" min= "110" max="150" required > </span>
                 
-                <span class="color"> <label for "actual-hb">Actual Hb (g/L)<span class= "minMax">50-140g/L</span></label><input type ="number" id = "actual-hb" min = "50" max= "140" required> </span>
+                
+                
+                
                 
           </form>
           <div class = "iConfirm">     
@@ -38,27 +81,31 @@
             
             </ul>
        
-          <span>  I accept that this tool is <b><u>not</u></b> a substitute for clinical judgement and will use this it according to the NMUH <i>Use of Parenteral Irons in Adult Patients for Treatment of Iron Deficiency Anaemia guideline.</i></span>
+          <span>  I accept that this tool is <b><u>not</u></b> a substitute for clinical judgement. </span>
           
        
              </div> 
              <div id ="selection-container">
            <h4 id = "selection-message">After you have entered your values select an iron preparation below<h4>
-                   <ul><li class = "mr">First line for <b><u>inpatients</u></b> is Cosmofer®.</li>
-                   <li class = "mr">First line for <b><u>outpatients</u></b> is Monofer®. It has a shorter infusion time and unlike Ferinject® doses above 1000mg can be given in a <b><u>single infusion</u></b>, removing the need for a second outpatient visit. Can also be used for fluid overloaded inpatients that cannot have Cosmofer® or if a 4-6 hour infusion will delay discharge</li>
-                    <li class= "mr">Ferinject® can be used if Monofer is not tolerable for outpatients, or or according to a consultant's preference</li></ul></div>
+               <ul><li>First line for <b><u>inpatients</u></b> is Cosmofer</li>
+                    <li>If Cosmofer is contraindicated, or the patient is fluid overloaded, select Monofer</li>
+                    <li>Ferinject can be used if Monofer is not suitable, for day case patients, or if Cosmofer would delay a discharge</li></ul></div>
                
-              <div id="calculate"><button id="cosmoferBtn">Cosmofer®</button><button id="monoferBtn">Monofer®</button><button id="ferinjectBtn">Ferinject®</button>
-               <p id ="render-dose"> </p>
+              <div id="calculate">
+              <div><button id="cosmoferBtn">Cosmofer</button></div>
+              <div><button id="monoferBtn">Monofer</button></div>
+              <div><button id="ferinjectBtn">Ferinject</button>
+              </div>
+              
                </div>
             
-        
+               <p id ="render-dose"> </p>
              <div >
              <div id="references">
          
 <p> 
    <h4 class= "references" id= "reference-heading"> References</h4> 
-    <h4  class= "references" id= "guidelines">1. Use of Parenteral Irons in Adult Patient for Treatment of Iron Deficiency Anaemia Version 5.0 North Middlesex University Hospital 2022</h4>
+    <h4  class= "references" id= "guidelines">1. Use of parenteral Irons in Adult Patient for Treatment of Iron Deficiency Anaemia Version 5.0 North Middlesex University Hospital 2022</h4>
 <h4  1 class= "references" id = "Ferinject">2. Ferinject (ferric carboxymaltose) Summary of Product Characteristics Updated 17-Feb-2022 | Vifor Pharma UK Limited. Accessed 30/09/2022</h4>
 <h4  class=  "references" id = "Monofer">3. Monofer 100mg/ml solution for injection/infusion Summary of Product Characteristics Updated 15-Aug-2022 | Pharmacosmos UK Limited. Accessed 30/09/2022</h4>
 <h4  class= "references" id = "Cosmofer">4. CosmoFer Summary of Product Characteristics Updated 28-Jan-2020 | Pharmacosmos UK Limited. Accessed 30/09/2022</h4></p>
