@@ -1,158 +1,235 @@
+html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;}
+
+body{
+    background: white;
+    color: black;
+    text-shadow: 0em ; 
+       font-family: 'Lato', sans-serif;	
+       margin: 0;
+    padding: 0;}
+
 .container{
-    padding-bottom: 20px;
-    border: 3px solid darkslategray;
+    padding-bottom: 1.25em;
+    border: 0.25em solid darkslategray;
     height:auto;
-  width:900px;	
-    min-width:900px;
-    max-width:900px;	
+    width: auto;
+
+    max-width: 50em;	
     display: flex;
     flex-direction:column; 
-  
-    margin: 0px auto; 
-    font-family: 'Calibri', sans-serif;	
+    margin: 0em auto; 
+    text-align: center;
+    	
 }
 h1,h2,h3,h4,h5{
-	    font-family: 'Calibri', sans-serif;	
+	    font-family: 'Lato', sans-serif;	
 }
 	
+h1{
+    font-weight: 900pt;
+}
+h2,h3,h4,h5{
+    font-family: 'Lato', sans-serif;
+    font-weight: 500pt;	
+}
+
 h4{
-    margin: 30px 0px ;
-    margin-bottom: 15px;
-    padding: 5px 0px;
+    margin: 1.875em 0em ;
+    margin-bottom: 0.9em;
+    padding: 0.3125em 0em;
     
 }
 
-#height{
-  margin-top: 10px;  
+
+.inputLabel,.inputRow{
+    
+    width: 90%;
+    height: auto;
+    margin: 0em auto;
+  
+}
+.inputLabel{
+    display: inline-flex;
+    justify-content: center;
+    width: 90%;
+    padding: 1em;
+    margin: 0em 2em;
+    text-align: center  ;
+    
 }
 
 
+.inputRow{
+    
+    min-height: 4.5em;	
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;}
 
+.label{
+    
+margin: 0;
+padding: 0;
+transform: translateX(2em);
+    
+}
+.label,.input{
+    min-width: 35%;
+    max-width: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0.125em 1.25em;
+    text-align: center;
+    align-content: center;
+    justify-content: space-around;
+    
+}
 
+.labelMinMax{
+    text-align: center;
+   
+    justify-content: center;
+    justify-items: center;
+    
+}
 
 label{
     display: inline-block;
-    height: 45px;
    
-    width: 190px;
-    margin-top:10px;	
+    min-height: 2.5125em;
+    max-height: 2.5125em;
+   text-align: left;
+   
+   min-width: 45%;
+   max-width: 75%;
+   transform: translateX(2.5em);
+    /* margin-top:0.625em;	
 
-    margin-left: 255px;
+    margin-left: 6em;*/
 	
     font-weight: bolder;
-   
-     font-family: 'Calibri', sans-serif;		
+   margin: 0em auto;
+     		
 }
+
 input{   
     display: inline-block;
-    width: 145px;
-    height: 37px;
-	padding: 10px 16px;
-	margin-right:255px;
-    margin-top:10px;
-    margin-bottom:0px;	
+        min-height: 2.5125em;
+        max-height: 2.5125em;
+    min-width: 67%;
+    max-width: 67%;
+  
+	padding: 0.625em 1em;
+	/*margin-right:6em;
+    margin-top:0.625em;
+    margin-bottom:0em;*/
+		margin: 0em auto;
     font-size: larger;
-   
+    margin: 0.25em 0;
     font-weight: bold;
-    text-shadow: 0px;
-    border: 1.5px solid darkslategray;
-     font-family: 'Calibri', sans-serif;	
+    text-shadow: 0em;
+    border: 0.15em solid darkslategray;
+   
     background: white;
     color: darkslategray;
     text-align: center;	
+    transform: translateX(-1.25em);
 }
 
+
+
+
+
+
+
+
 .gender{
-     margin-top:10px;
-    margin-bottom:0px;
+    display: inline-block;
     
-    border: 1.5px solid darkslategray ;
+   
+    
+    margin-bottom:0em;
+    border: 0.15em solid darkslategray ;
     font-weight: bold;
     font-size:large;
     
        
-    width: 72px;
-    height: 37px;
-    	
+    min-width: 4.25em;
+    max-width: 4.25em;
+    min-height: 2.5125em;
+    max-height: 2.5125em;
+   
         text-align: center;
-     padding: 0px  ;
+     padding: 0em   ;
+     align-content: center;
           justify-content:center;
+          transform: translateX(-1.45em);
 }
-#female{
-    margin-right:255px;}
+
  #female,#male{   
     background-color:white;
    color:  darkslategray;
     text-shadow:  0px 0px 0px black;
 }
+
 #male{
-       position:relative;
-	       right:-18px;
+    position: relative;
+    right: -0.1em;
 }
 
 
 
 
-.iConfirm{
-    margin: 0px 40px;
-    margin-top: 25px;
-    background: lightgrey;
-    padding: 20px;    
-    border: 1px solid black;
-}
 #ferinjectBtn,#monoferBtn,#cosmoferBtn{
-    margin: 40px 20px;
-    width: 140px;
-    padding: 12px 4px;
+    margin: 2.5em 0.25em;
+    width: 6.75em;
+    padding: 0.375em 0.15em;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 0.5em;
     background: darkslategray;
     color: white;
-    text-shadow: 0px 0px 4px black;
-    border: 1px solid black ;
+    text-shadow: 0em 0em 0.25em black;
+    border: 0.0625em solid black ;
     font-weight: bold;
-    font-size:x-large;
+    font-size:large;
+    align-content: center;
     
 }
 #calculate{
-   
-    width: 100%;
+   display: flex; 
+   justify-content:space-evenly;
+   flex-direction: row;
     text-align: center;
-    margin: 0px ;
+    margin: 0em auto;
+    width: 80%;
 }
-body{
-   background: white;
-   color: black;
-   text-shadow: 0px ; 
-      font-family: 'Calibri', sans-serif;	
-      margin: 0;
-    
 
-    
-}
 .color{
        display: flex;
 
     justify-content: space-between;
-   margin: 10px;
+   margin: 0.625em;
 }
 
 .color ul {
     display: inline-block;
     position: relative;
-    left: 365px;
-    bottom:55px;
+    left: 22.81em;
+    bottom:3.4375em;
     color: brown;
     list-style: none;
     font-size: x-small;
-    text-shadow: 0px 0px 0px black;
+    text-shadow: 0em 0em 0em black;
 }
 
 h5{
     color: grey;
-    margin: 0px auto;
+    margin: 0em auto;
     text-align: center;
-    margin-left: 30px;
+    margin-left: 1.875em;
 }
 
     
@@ -163,49 +240,56 @@ header{
     background: darkslategray;
     color: white;
     background: cover;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
     text-align: center;
-    padding-bottom: 8px;
-    text-shadow: 0px 0px 4px black; 
-    border-top: 5px solid darkslategray;
+    padding-bottom: 0.5em;
+    text-shadow: 0em 0em 0.25em  black; 
+    border-top: 0.3125em solid darkslategray;
     
 }
 
 .minMax{
+    display: inline-flex;
+    flex-direction:column;
     color: gray;
     display: flex;
     flex-direction: row;
     font-style: italic;
     font-size: smaller;
-    width:220px;
-height:25px;
+    width:13.75em;
+    text-align: left;
+height:1.5625em;
+margin: 0em auto;
+
+
 
 
   
+
+
 }
 
-.underline{
-    
-}
 #shah{
     
-    display: inline-block;
-    min-width:800px;
-    width: 800px;
+    display: block;
+    flex-direction: column;
     align-self: center;
-    padding: 20px 25px;
-    margin: 0px auto;
+    padding: 1.25em 1.5625em;
+    margin: 0em auto;
+    margin-left: 0;
+    min-width: 40%; 
+    max-width: 50em;
 }
 #render-dose{
     
     display: inline-block;
-    padding: 20px 20px;
-    margin: -20px auto;
+    padding: 1.25em;
+    margin: -1.25em auto;
 }
 #render-dose h4{
-    margin: 20px;
-    padding: 20px;
-    border: 4px solid gray;
+    margin: 1.25em;
+    padding: 1.25em;
+    border: 0.25em solid gray;
 }
 
 #render-dose span{
@@ -213,12 +297,12 @@ height:25px;
 }
 
 #render-dose li,#single{
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
     
 }
 #single{
     text-decoration: none;
-    margin-bottom: 10px
+    margin-bottom: 0.625em;
 }
 #render-dose h5{
   color:  purple;
@@ -233,49 +317,67 @@ font-size: medium;
 }
 
 #Ferinject,#Monofer,#Cosmofer,#guidelines,#reference-heading{
-  margin: 0px 20px;
+  margin: 0em 1.25em;
     font-size: small;
     font-weight: normal;
 }
 #Cosmofer{
-    margin-bottom: -15px;
-}
-#reference-heading{
-    text-decoration: underline;
-    font-weight: bold;
-    margin-top: -20px;
-    margin-bottom: 10px;
-    
-}
-#references{
-    
-    margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    border: 1px solid gray;
-    width: 815px;
-    margin-top: 0px;
-    
+    margin-bottom: 0.9375em;
 }
 
+.iConfirm{
+    margin: 0em 2.5em;
+    margin-top: 1.5625em;
+    background: lightgrey;
+    padding: 1.25em;    
+    border: 0.0625em solid black;
+    min-width: 40%; 
+    max-width: 90%;
+    
+    
+    text-align: justify;
+}
 
 
 #selection-container{
     display: flex;
     flex-direction: column;
-    width: 850px;
-    margin:  0px 80px;
-    margin-bottom: -40px; 
+    width: 50em;
+    margin:  0em auto ;
+    margin-bottom: -2.5em ; 
+    min-width: 40%; 
+    max-width: 90%;
+    text-align: justify;
     
 }
 #selection-message{
+  
     
-    margin-bottom: -50px;
+    
+    text-align: justify;
+    margin-bottom: -3.125em;
 }
 
 .finalCalc, #selection-message{
    color:red;	}
 
 
- 
+   #reference-heading{
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: -1.25em;
+    margin-bottom: 0.625em;
+    
+}
+#references{
+    
+    margin: 0em auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 0.0625em solid gray;
+   
+    margin-top: 0px;
+    min-width: 40%; 
+    max-width: 90%;   
+}
