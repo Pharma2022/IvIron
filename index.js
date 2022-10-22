@@ -1,12 +1,12 @@
 // javascript
-let  patientGender= ""
+
 const height=document.getElementById("height")
 const bodyWeight = document.getElementById("body-weight")
 const targetHb=document.getElementById("target-hb")
 const actualHb= document.getElementById("actual-hb")
 const calculateDose= document.getElementById("calculate-dose")
 const renderDose=document.getElementById("render-dose")
-
+        let myfactor= "" 
 const reset= document.getElementById("reset")
 const male = document.getElementById("male")
 const female = document.getElementById("female")
@@ -16,8 +16,7 @@ const ferinject ="Ferinject"
 
 male.addEventListener("click",function(e){
     e.preventDefault()
-            patientGender= male.value
-            console.log(patientGender)
+           myfactor=50
             female.style.backgroundColor="white"
             female.style.color=  "darkslategray"
             female.style.textShadow= " 0px 0px 0px black"
@@ -27,9 +26,8 @@ male.addEventListener("click",function(e){
         
 female.addEventListener("click",function(e){
     e.preventDefault()
-            console.log(patientGender)
-            patientGender = female.value
-            console.log(patientGender)
+           
+          myfactor=45.5
             male.style.backgroundColor="white"
             male.style.color=  "darkslategray"
             male.style.textShadow= " 0px 0px 0px black"
@@ -48,15 +46,16 @@ female.addEventListener("click",function(e){
                 let patientTargetHb= JSON.parse(targetHb.value)
                 let patientActualHb= JSON.parse(actualHb.value)
                 let myIron=ironPrep
-                
+                let factor=myfactor
         
         
-  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))      
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))
+
     {    
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
-                <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}®</span>        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
+                <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}</span>        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
                 <h4><div >Total Iron required is <span class= finalCalc>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
               
                <h4 id="box">${testdose}</h4>
@@ -66,12 +65,12 @@ female.addEventListener("click",function(e){
                 `}
         
         let bmi= patientWeight*10000/(patientHeight*patientHeight)
-        let factor = 50
-                    if (patientGender == "Female")    {  factor =45.5    }
-                    else if (patientGender=="Male")  { factor =50}        
+                  
+           
+                   
         let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
         let ddw= ibw+ 0.4*(patientWeight-ibw)
-        console.log("ddw= "+ddw+ " ibw= "+ibw)
+      
         let finalWeight = 0 
         let modifier= " actual"
        
@@ -98,11 +97,11 @@ female.addEventListener("click",function(e){
         
          let ironstore= 500
         if (patientWeight<35){ironstore=Math.round(patientWeight*15/ 100) * 100;
-        console.log(ironstore)}
+       }
         
         
         let finalCalculation =(Math.round((JSON.parse(calculation) / 100) * 100))+ironstore
-        console.log(finalCalculation+ " "+typeof +finalCalculation)
+       
         let firstInfusion = ""
         let secondInfusion= ""
         let message=""
@@ -276,7 +275,7 @@ if(ironPrep==="Ferinject")
                  message = ` <div>
                         <li> First infusion:<span class="finalCalc"> ${firstInfusion}mg</span></li><li>Second infusion:<span class="finalCalc"> ${secondInfusion} mg</span></li>
                         
-                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
+                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
                      <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
                 
@@ -384,11 +383,8 @@ if(ironPrep==="Ferinject")
                       }
                             
         }
-        render()
-                
-    }
-else{
-     function renderError(){  renderDose.innerHTML=""
+
+         function renderError(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
                 <h3><div> You have selected values outside the ranges </h3></div> 
@@ -398,7 +394,14 @@ else{
             
                  
                 `}
-                renderError()
+        render()
+                
+
+    }
+
+    
+else {
+        renderError()
 }
 
   }
@@ -406,34 +409,42 @@ else{
  
 
 document.getElementById("cosmoferBtn").addEventListener("click",function (){
+    
+   
     calculate(cosmofer)
 
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="red"
     
-
+console.log(myfactor)
+   
     
     
 })
 
 document.getElementById("monoferBtn").addEventListener("click",function (){
+   
     calculate(monofer)
    
     document.getElementById("monoferBtn").style.backgroundColor="red"
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
- 
-
+    
+console.log(myfactor)
+  
     
 })
 
 document.getElementById("ferinjectBtn").addEventListener("click",function (){
+   
     calculate(ferinject)
 
     document.getElementById("ferinjectBtn").style.backgroundColor="red"
     document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
     document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
 
+console.log(myfactor)
+    
    
 })
