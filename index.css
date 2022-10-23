@@ -808,3 +808,8 @@ font-size: medium;
         
     }
   }
+
+.red{
+    display: inline;
+    color: red;
+}
