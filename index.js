@@ -59,7 +59,7 @@ female.addEventListener("click",function(e){
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
-                <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}</span>${trademark}        ${target}<span> ${patientTargetHb}</span>  ${gl}    ${actual}<span> ${patientActualHb}</span>  g/L.<div>${ferinjectMessage}</div> </h3></div> 
+                <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}</span>       ${target}<span> ${patientTargetHb}</span>  ${gl}    ${actual}<span> ${patientActualHb}</span>  g/L.<div>${ferinjectMessage}</div> </h3></div> 
                 <h4><div >Total Iron required is <span class= finalCalc>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
               
                <h4 id="box">${testdose}</h4>
