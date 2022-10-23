@@ -10,10 +10,14 @@ const renderDose=document.getElementById("render-dose")
 const reset= document.getElementById("reset")
 const male = document.getElementById("male")
 const female = document.getElementById("female")
-const cosmofer="Cosmofer"
-const monofer="Monofer"
-const ferinject ="Ferinject"
-
+const cosmofer=`Cosmofer`
+const monofer=`Monofer`
+const ferinject =`Ferinject`
+const trademark=`<h3 class="red"><sup>&reg;</sup> </h3>`
+let ferinjectMessage=""
+let gl=`g/L`
+let actual=`Actual Hb: `
+let target=`Target Hb: `
 male.addEventListener("click",function(e){
     e.preventDefault()
            myfactor=50
@@ -55,7 +59,7 @@ female.addEventListener("click",function(e){
         function render(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
-                <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}</span>        Target Hb:<span>${patientTargetHb} g/L</span>    Actual Hb: <span>${patientActualHb} g/L</span> </h3></div> 
+                <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}</span>${trademark}        ${target}<span> ${patientTargetHb}</span>  ${gl}    ${actual}<span> ${patientActualHb}</span>  g/L.<div>${ferinjectMessage}</div> </h3></div> 
                 <h4><div >Total Iron required is <span class= finalCalc>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
               
                <h4 id="box">${testdose}</h4>
@@ -215,7 +219,10 @@ if(ironPrep==="Ferinject")
 
 {
             testdose="No test dose is required"
-         
+            target=""
+            patientTargetHb=""
+            gl=""
+            ferinjectMessage=`Please note, <span class = "finalCalc">total iron</span> calculated with <span class="finalCalc">dose banding</span> and <span>not</span> with <span class="finalCalc">target Hb</span>.`
             let minutes =""
             let volume = ""
             let firstVolume=""
