@@ -284,7 +284,7 @@ if(ironPrep==="Ferinject")
                         
                     <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
-                     <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
+                    <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
                 
              
              function ferinjectInfusionTriple()
@@ -391,16 +391,7 @@ if(ironPrep==="Ferinject")
                             
         }
 
-         function renderError(){  renderDose.innerHTML=""
-                renderDose.innerHTML= `
-                
-                <h3><div> You have selected values outside the ranges </h3></div> 
-                
-              
-                <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clicked on a <span class ="color">gender</span>. If your patient's values fall outside the above ranges, enter the values closest to the patient values within the range.</h4>
-            
-                 
-                `}
+         
         render()
                 
 
@@ -408,6 +399,16 @@ if(ironPrep==="Ferinject")
 
     
 else {
+function renderError(){  renderDose.innerHTML=""
+                renderDose.innerHTML= `
+                
+                <h3><div> You have selected values outside the ranges </h3></div> 
+                
+              
+                <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clicked on a <span class ="finalCalc">gender</span>. If your patient's values fall outside the above ranges, enter the values closest to the patient values within the range.</h4>
+            
+                 
+                `}
         renderError()
 }
 
