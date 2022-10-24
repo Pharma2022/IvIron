@@ -52,6 +52,17 @@ female.addEventListener("click",function(e){
                 let myIron=ironPrep
                 let factor=myfactor
         
+                if(ironPrep==="Monofer"||"Cosmofer"){
+                        
+          gl=`g/L`
+          actual=`Actual Hb: `
+        target=`Target Hb: `} else{
+                target=""
+            patientTargetHb=""
+            gl=""
+                
+        }
+                
         
   if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))
 
@@ -219,9 +230,7 @@ if(ironPrep==="Ferinject")
 
 {
             testdose="No test dose is required"
-            target=""
-            patientTargetHb=""
-            gl=""
+            
             ferinjectMessage=`Please note, <span class = "finalCalc">total iron</span> calculated with <span class="finalCalc">dose banding</span> and <span>not</span> with <span class="finalCalc">target Hb</span>.`
             let minutes =""
             let volume = ""
@@ -302,10 +311,10 @@ if(ironPrep==="Ferinject")
                     
                     
                     
-                    message =` <li> First infusion: <span class="finalCalc"> ${firstInfusion}mg</span></li><li>Second infusion: <span class="finalCalc"> ${secondInfusion} mg</span></li>Third infusion:<span class="finalCalc"> ${thirdInfusion} mg</span></li>
+                    message =` <li> First infusion: <span class="finalCalc"> ${firstInfusion}mg</span></li><li> Second infusion: <span class="finalCalc"> ${secondInfusion}mg</span></li><li>Third infusion:<span class="finalCalc"> ${thirdInfusion}mg</span></li>
                         
                     <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
-                    <h5> Leave a minimum of <span> one week</span> between the first and second infusions and third infusions. To avoid using three infusions, please consider Monofer or Cosmofer </h5>
+                    <h5> Leave a minimum of <span> one week</span> between the first and second infusions and third infusions. To avoid using three infusions, please consider Monofer<sup>&reg;</sup> or Cosmofer<sup>&reg;</sup> </h5>
                      <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5>
                      <h5> Add the third infusion of ${thirdInfusion}mg to a maximum of ${thirdVolume}ml Sodium Chloride. Give over a minimum ${thirdTime} minutes</h5> </div>`   }
                 
@@ -402,10 +411,10 @@ else {
 function renderError(){  renderDose.innerHTML=""
                 renderDose.innerHTML= `
                 
-                <h3><div> You have selected values outside the ranges </h3></div> 
+                <h3><div> You have selected values outside the range(s)! </h3></div> 
                 
               
-                <h4 id="box">Please ensure all the values are correctly filled to meet the maximum and minimum parameters. Ensure you have clicked on a <span class ="finalCalc">gender</span>. If your patient's values fall outside the above ranges, enter the values closest to the patient values within the range.</h4>
+                <h4 id="box">Please ensure all the values are correctly filled to meet the <span class ="finalCalc">maximum</span> and <span class ="finalCalc">minimum</span> parameters. Ensure you have clicked on a <span class ="finalCalc">gender</span>. If your patient's values fall <span class ="finalCalc">outside</span> the above ranges, enter the values within the range that are <span class="finalCalc">closest</span> to the patient values.</h4>
             
                  
                 `}
