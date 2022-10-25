@@ -75,8 +75,10 @@ female.addEventListener("click",function(e){
               
                <h4 id="box">${testdose}</h4>
                 <h4 id="box"> ${message} </h4>
-                <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. Prescribe <span>IV Chlorphenamine</span> 10mg up to QDS PRN, <span>IV Hydrocortisone </span> 100mg up to 500mg/24 hours and <span> IM Adrenaline 1 in 1000</span> PRN for any adverse reactions </h4>
-                 
+                 <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. Prescribe the following medications for the event of adverse reactions:
+                <li>IV Chlorphenamine 10mg up to QDS PRN</li>
+                <li>IV Hydrocortisone 100mg up to 500mg/24 hours</li>
+                <li>IM Adrenaline 1 in 1000 PRN</li> </h4>
                 `}
         
         let bmi= patientWeight*10000/(patientHeight*patientHeight)
