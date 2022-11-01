@@ -18,6 +18,18 @@ let ferinjectMessage=""
 let gl=`g/L`
 let actual=`Actual Hb: `
 let target=`Target Hb: `
+
+        
+function renderError(){  renderDose.innerHTML=""
+renderDose.innerHTML= `
+
+<h3><div> You have selected values outside the range(s)! </h3></div> 
+
+
+<h4 id="box">Please ensure all the values are correctly filled to meet the <span class ="finalCalc">maximum</span> and <span class ="finalCalc">minimum</span> parameters. Ensure you have clicked on a <span class ="finalCalc">gender</span>. If your patient's values fall <span class ="finalCalc">outside</span> the above ranges, enter the values within the range that are <span class="finalCalc">closest</span> to the patient values.</h4>
+
+ 
+`}
 male.addEventListener("click",function(e){
     e.preventDefault()
            myfactor=50
@@ -75,7 +87,7 @@ female.addEventListener("click",function(e){
               
                <h4 id="box">${testdose}</h4>
                 <h4 id="box"> ${message} </h4>
-                 <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. Prescribe the following medications for the event of adverse reactions:
+                <h4 id="box"> Please ensure that the patient is monitored for the duration of the infusion and 30 minutes after for adverse effects. Prescribe the following medications for the event of adverse reactions:
                 <li>IV Chlorphenamine 10mg up to QDS PRN</li>
                 <li>IV Hydrocortisone 100mg up to 500mg/24 hours</li>
                 <li>IM Adrenaline 1 in 1000 PRN</li> </h4>
@@ -293,7 +305,7 @@ if(ironPrep==="Ferinject")
                  message = ` <div>
                         <li>First infusion: <span class="finalCalc">${firstInfusion}mg</span></li><li>Second infusion: <span class="finalCalc">${secondInfusion} mg</span></li>
                         
-                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume} Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
+                    <h5> Add the first infusion of ${firstInfusion} mg to a maximum of ${firstVolume}ml Sodium Chloride. Give over a minimum ${firstTime} minutes</h5>
                     <h5> Leave a minimum of <span> one week</span> between the first and second infusions. </h5>
                     <h5> Add the second infusion of ${secondInfusion}mg to a maximum of ${secondVolume}ml Sodium Chloride. Give over a minimum ${secondTime} minutes</h5> </div>`}
                 
@@ -404,22 +416,17 @@ if(ironPrep==="Ferinject")
 
          
         render()
-                
+        
 
+        if (!((myfactor===45.5)||(myfactor===50))){
+            renderError()
+        }
+      
     }
 
     
 else {
-function renderError(){  renderDose.innerHTML=""
-                renderDose.innerHTML= `
-                
-                <h3><div> You have selected values outside the range(s)! </h3></div> 
-                
-              
-                <h4 id="box">Please ensure all the values are correctly filled to meet the <span class ="finalCalc">maximum</span> and <span class ="finalCalc">minimum</span> parameters. Ensure you have clicked on a <span class ="finalCalc">gender</span>. If your patient's values fall <span class ="finalCalc">outside</span> the above ranges, enter the values within the range that are <span class="finalCalc">closest</span> to the patient values.</h4>
-            
-                 
-                `}
+
         renderError()
 }
 
