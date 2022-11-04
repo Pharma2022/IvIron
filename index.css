@@ -17,7 +17,7 @@ body{
     height:auto;
     width: auto;
 
-    max-width: 80em;	
+    max-width: 50em;	
     display: flex;
     flex-direction:column; 
     margin: 0em auto; 
@@ -57,6 +57,7 @@ h4{
     width: 90%;
     padding: 1em;
     margin: 0em 2em;
+    margin-bottom:0;
     text-align: center  ;
     
 }
