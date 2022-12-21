@@ -48,23 +48,24 @@ h4{
     
     width: 90%;
     height: auto;
-    margin: 0em auto;
+    margin: auto;
   
 }
+
+
 .inputLabel{
     display: inline-flex;
     justify-content: center;
     width: 90%;
     padding: 1em;
-    margin: 0em 2em;
-    margin-bottom:0;
+    margin: 0em auto;
     text-align: center  ;
     
 }
 
 
 .inputRow{
-    
+    margin:  auto ;
     min-height: 4.5em;	
     display: inline-flex;
     justify-content: center;
@@ -391,4 +392,3 @@ font-size: medium;
     display: inline;
     color: red;
 }
-

@@ -1,27 +1,24 @@
 // javascript
-
-const height=document.getElementById("height")
-const bodyWeight = document.getElementById("body-weight")
-const targetHb=document.getElementById("target-hb")
-const actualHb= document.getElementById("actual-hb")
-const calculateDose= document.getElementById("calculate-dose")
-const renderDose=document.getElementById("render-dose")
-        let myfactor= "" 
-const reset= document.getElementById("reset")
-const male = document.getElementById("male")
-const female = document.getElementById("female")
-const cosmofer=`Cosmofer`
-const monofer=`Monofer`
-const ferinject =`Ferinject`
+let myfactor= "" 
 const trademark=`<h3 class="red"><sup>&reg;</sup> </h3>`
 let ferinjectMessage=""
 let gl=`g/L`
 let actual=`Actual Hb: `
 let target=`Target Hb: `
 
-        
-function renderError(){  renderDose.innerHTML=""
-renderDose.innerHTML= `
+/* 
+
+Message=
+Number of Infusions required
+1,2, 3 for ferinject
+Administration instructions
+single
+double
+triple
+ */
+
+function renderError(){  
+document.getElementById("render-dose").innerHTML= `
 
 <h3><div> You have selected values outside the range(s)! </h3></div> 
 
@@ -30,38 +27,29 @@ renderDose.innerHTML= `
 
  
 `}
-male.addEventListener("click",function(e){
+
+function genderToggle(e,gender1,gender2,x){
     e.preventDefault()
-           myfactor=50
-            female.style.backgroundColor="white"
-            female.style.color=  "darkslategray"
-            female.style.textShadow= " 0px 0px 0px black"
-                male.style.backgroundColor="darkslategray"
-                male.style.color= "white"
-                male.style.textShadow= " 0px 0px 4px black"})
-        
-female.addEventListener("click",function(e){
-    e.preventDefault()
-           
-          myfactor=45.5
-            male.style.backgroundColor="white"
-            male.style.color=  "darkslategray"
-            male.style.textShadow= " 0px 0px 0px black"
-                female.style.backgroundColor="darkslategray"
-                female.style.color= "white" 
-                female.style.textShadow= " 0px 0px 4px black" 
-}
-)
+    myfactor=x
+     gender1.style.backgroundColor="white"
+            gender1.style.color=  "darkslategray"
+            gender1.style.textShadow= " 0px 0px 0px black"
+                gender2.style.backgroundColor="darkslategray"
+                gender2.style.color= "white" 
+                gender2.style.textShadow= " 0px 0px 4px black" 
+    }
+
+
 
 
 
       function calculate(ironPrep){
            
-                let patientHeight = JSON.parse(height.value)
-                let patientWeight= JSON.parse(bodyWeight.value)
-                let patientTargetHb= JSON.parse(targetHb.value)
-                let patientActualHb= JSON.parse(actualHb.value)
-                let myIron=ironPrep
+                let patientHeight = JSON.parse(document.getElementById("height").value)
+                let patientWeight= JSON.parse(document.getElementById("body-weight").value)
+                let patientTargetHb= JSON.parse(document.getElementById("target-hb").value)
+                let patientActualHb= JSON.parse(document.getElementById("actual-hb").value)
+               
                 let factor=myfactor
         
                 if(ironPrep==="Monofer"||"Cosmofer"){
@@ -70,17 +58,16 @@ female.addEventListener("click",function(e){
           actual=`Actual Hb: `
         target=`Target Hb: `} else{
                 target=""
-            patientTargetHb=""
             gl=""
                 
         }
                 
         
-  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=100)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150))
 
     {    
-        function render(){  renderDose.innerHTML=""
-                renderDose.innerHTML= `
+        function render(){  
+                document.getElementById("render-dose").innerHTML= `
                 
                 <h3><div> Calculated dose: for <span class= "finalCalc">${ironPrep}</span>${trademark}        ${target}<span> ${patientTargetHb}</span>  ${gl}    ${actual}<span> ${patientActualHb}</span>  g/L.<div>${ferinjectMessage}</div> </h3></div> 
                 <h4><div >Total Iron required is <span class= finalCalc>${(finalCalculation)}mg</span>, using ${modifier} weight: ${finalWeight}kg.</div></h4>
@@ -100,25 +87,28 @@ female.addEventListener("click",function(e){
         let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
        
       
-        let finalWeight = 0 
-        let modifier= " actual"
+        let finalWeight = patientWeight 
+          modifier=" actual body"
        
-        if (bmi>30 && !ironPrep === "Ferinject"){
-            finalWeight=ibw.toFixed(0) 
-            modifier=" ideal body"}
-
-        else{  finalWeight=patientWeight  
-                     modifier=" actual body"}
+        
+        
+        
+        if (ironPrep === "Cosmofer"|| ironPrep ==="Monofer")
+        {
+       finalWeight= bmi>30? ibw.toFixed(0) :finalWeight
+            modifier= bmi>30? " ideal body": " actual body"
+           
+        } 
+        
         
         let calculation = Math.round((0.24*finalWeight*(patientTargetHb-patientActualHb)).toFixed(0) / 100) * 100
        
-        if (JSON.parse(calculation)>1700){
-            calculation="1700"}
+        calculation =  (JSON.parse(calculation)>1700)? "1700" :calculation
         
         
-         let ironstore= 500
-        if (patientWeight<35){ironstore=Math.round(patientWeight*15/ 100) * 100;
-       }
+         
+         const ironstore= patientWeight<35? Math.round(patientWeight*15/ 100) * 100:500
+       
         
         
         let finalCalculation =(Math.round((JSON.parse(calculation) / 100) * 100))+ironstore
@@ -126,22 +116,19 @@ female.addEventListener("click",function(e){
         let firstInfusion = ""
         let secondInfusion= ""
         let message=""
-        let testdose=""
-        if (ironPrep=="Cosmofer"){
-            testdose= `The first <span class = finalCalc>25mg</span> of the first infusion needs to be given as a <span class= finalCalc>test dose</span> over 15 minutes.`
-        } 
+       
         
+        
+        let testdose = ironPrep === "Cosmofer"? "The first <span class = finalCalc>25mg</span> of the first infusion needs to be given as a <span class= finalCalc>test dose</span> over 15 minutes.":`No test dose is required`
       
-        if (finalWeight.value>90){
-            finalWeight=90
-        }
+        finalweight= finalWeight.value > 90? 90:finalWeight
+       
         
 
         
         if (finalWeight*20<finalCalculation)
             {firstInfusion= Math.floor(finalWeight*20 / 100) * 100
-            if (finalWeight.value>90){
-            finalWeight=90 }
+           
           
             secondInfusion= finalCalculation-firstInfusion
             if (secondInfusion>firstInfusion){
@@ -174,6 +161,8 @@ female.addEventListener("click",function(e){
            </div> `} 
             
             if (ironPrep=="Monofer"&&secondInfusion>=100){
+                
+                /*Monofer double and single*/
             message = ` <div>
         
             <li> First infusion: <span class ="finalCalc">${firstInfusion}mg</span></li>
@@ -182,7 +171,7 @@ female.addEventListener("click",function(e){
            <h5> Give over 30minutes</h5>
            <h5> Leave a minimum of <span> one week</span> between the first and second infusions </h5>
             </div>`
-            testdose=`No test dose is required`
+           
             }
            else if (ironPrep=="Monofer"&&secondInfusion<100){
                finalCalculation=firstInfusion-100
@@ -192,13 +181,11 @@ female.addEventListener("click",function(e){
            
            <h5> Give over 30 minutes</h5>
             
-           </div> `
-            testdose=`No test dose is required`    
+           </div> `   
            }
             } 
         else{ firstInfusion= finalCalculation
-            testdose= ` The first <span class= "finalCalc"> 25mg<span> of this infusion is to be given as a <span class="finalCalc">test dose</span> over 15 minutes.`
-            
+           
               if (ironPrep=="Cosmofer"){
             
             message=`<div> <div id="single">A single infusion of <span class="finalCalc">${finalCalculation}mg </span> is required.</div>
@@ -210,10 +197,8 @@ female.addEventListener("click",function(e){
            </div> `} 
          
            
-             if (ironPrep==="Monofer" || ironPrep==="Ferinject") 
-        {
-            testdose= `No test dose is required`
-               if(ironPrep==="Monofer"){
+            
+ironPrep==="Monofer"?
                 
             message=`<div> <div id="single">A single infusion of <span class ="finalCalc">${finalCalculation}mg</span> is required.</div>
            
@@ -222,9 +207,9 @@ female.addEventListener("click",function(e){
            <h5> Give over 30 minutes</h5>
             
            </div> `
-            }
+            :""
            
-        }
+        
             
             
                   
@@ -235,7 +220,7 @@ if(ironPrep==="Ferinject")
 
 
 {
-            testdose="No test dose is required"
+            
             
             ferinjectMessage=`Please note, <span class = "finalCalc">total iron</span> calculated with <span class="finalCalc">dose banding</span> and <span>not</span> with <span class="finalCalc">target Hb</span>.`
             let minutes =""
@@ -410,9 +395,7 @@ if(ironPrep==="Ferinject")
         render()
         
 
-        if (!((myfactor===45.5)||(myfactor===50))){
-            renderError()
-        }
+      
       
     }
 
@@ -424,45 +407,25 @@ else {
 
   }
   
- 
+function renderCalculation (ironPrep,iron1,iron2,iron3) {
+    calculate(ironPrep)
+    document.getElementById(iron1).style.backgroundColor="red"
+    document.getElementById(iron2).style.backgroundColor="darkslategray"
+    document.getElementById(iron3).style.backgroundColor="darkslategray"
+    
+}
 
-document.getElementById("cosmoferBtn").addEventListener("click",function (){
-    
-   
-    calculate(cosmofer)
-
-    document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
-    document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
-    document.getElementById("cosmoferBtn").style.backgroundColor="red"
-    
-console.log(myfactor)
-   
-    
-    
+document.addEventListener("click",e =>{
+    e.preventDefault()
+    e.target.id === "cosmoferBtn"? renderCalculation("Cosmofer", "cosmoferBtn","monoferBtn","ferinjectBtn")
+    :e.target.id === "monoferBtn"? renderCalculation("Monofer","monoferBtn","cosmoferBtn","ferinjectBtn")
+    :e.target.id === "ferinjectBtn"? renderCalculation("Ferinject","ferinjectBtn","monoferBtn","cosmoferBtn")
+    :e.target.id === "male"?  genderToggle(e,female,male,50)
+    :e.target.id === "female"? genderToggle(e,male,female,45.5):""
 })
 
-document.getElementById("monoferBtn").addEventListener("click",function (){
-   
-    calculate(monofer)
-   
-    document.getElementById("monoferBtn").style.backgroundColor="red"
-    document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
-    document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
-    
-console.log(myfactor)
-  
-    
-})
 
-document.getElementById("ferinjectBtn").addEventListener("click",function (){
-   
-    calculate(ferinject)
 
-    document.getElementById("ferinjectBtn").style.backgroundColor="red"
-    document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
-    document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
 
-console.log(myfactor)
-    
    
-})
+
