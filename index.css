@@ -48,24 +48,23 @@ h4{
     
     width: 90%;
     height: auto;
-    margin: auto;
+    margin: 0em auto;
   
 }
-
-
 .inputLabel{
     display: inline-flex;
     justify-content: center;
     width: 90%;
     padding: 1em;
-    margin: 0em auto;
+    margin: 0em 2em;
+    margin-bottom:0;
     text-align: center  ;
     
 }
 
 
 .inputRow{
-    margin:  auto ;
+    
     min-height: 4.5em;	
     display: inline-flex;
     justify-content: center;
@@ -108,9 +107,7 @@ label{
    min-width: 45%;
    max-width: 75%;
    transform: translateX(2.5em);
-    /* margin-top:0.625em;	
 
-    margin-left: 6em;*/
 	
     font-weight: bolder;
    margin: 0em auto;
@@ -125,9 +122,7 @@ input{
     max-width: 67%;
   
 	padding: 0.625em 1em;
-	/*margin-right:6em;
-    margin-top:0.625em;
-    margin-bottom:0em;*/
+	
 		margin: 0em auto;
     font-size: larger;
     margin: 0.25em 0;
