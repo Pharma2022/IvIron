@@ -19,8 +19,41 @@ let gl=`g/L`
 let actual=`Actual Hb: `
 let target=`Target Hb: `
 
+
+function genderToggle(e,gender1,gender2,x){
+    e.preventDefault()
+    myfactor=x
+     gender1.style.backgroundColor="white"
+            gender1.style.color=  "darkslategray"
+            gender1.style.textShadow= " 0px 0px 0px black"
+                gender2.style.backgroundColor="darkslategray"
+                gender2.style.color= "white" 
+                gender2.style.textShadow= " 0px 0px 4px black" 
+    }
+
+function renderCalculation (ironPrep,iron1,iron2,iron3) {
+    calculate(ironPrep)
+    document.getElementById(iron1).style.backgroundColor="red"
+    document.getElementById(iron2).style.backgroundColor="darkslategray"
+    document.getElementById(iron3).style.backgroundColor="darkslategray"
+    
+}
+
+
+document.addEventListener("click",e =>{
+    e.preventDefault()
+    e.target.id === "cosmoferBtn"? renderCalculation("Cosmofer", "cosmoferBtn","monoferBtn","ferinjectBtn")
+    :e.target.id === "monoferBtn"? renderCalculation("Monofer","monoferBtn","cosmoferBtn","ferinjectBtn")
+    :e.target.id === "ferinjectBtn"? renderCalculation("Ferinject","ferinjectBtn","monoferBtn","cosmoferBtn")
+    :e.target.id === "male"?  genderToggle(e,female,male,50)
+    :e.target.id === "female"? genderToggle(e,male,female,45.5):""
+})
+
+
+
+
         
-function renderError(){  renderDose.innerHTML=""
+function renderError(){  
 renderDose.innerHTML= `
 
 <h3><div> You have selected values outside the range(s)! </h3></div> 
@@ -30,28 +63,7 @@ renderDose.innerHTML= `
 
  
 `}
-male.addEventListener("click",function(e){
-    e.preventDefault()
-           myfactor=50
-            female.style.backgroundColor="white"
-            female.style.color=  "darkslategray"
-            female.style.textShadow= " 0px 0px 0px black"
-                male.style.backgroundColor="darkslategray"
-                male.style.color= "white"
-                male.style.textShadow= " 0px 0px 4px black"})
-        
-female.addEventListener("click",function(e){
-    e.preventDefault()
-           
-          myfactor=45.5
-            male.style.backgroundColor="white"
-            male.style.color=  "darkslategray"
-            male.style.textShadow= " 0px 0px 0px black"
-                female.style.backgroundColor="darkslategray"
-                female.style.color= "white" 
-                female.style.textShadow= " 0px 0px 4px black" 
-}
-)
+
 
 
 
@@ -61,7 +73,6 @@ female.addEventListener("click",function(e){
                 let patientWeight= JSON.parse(bodyWeight.value)
                 let patientTargetHb= JSON.parse(targetHb.value)
                 let patientActualHb= JSON.parse(actualHb.value)
-                let myIron=ironPrep
                 let factor=myfactor
         
                 if(ironPrep==="Monofer"||"Cosmofer"){
@@ -76,7 +87,7 @@ female.addEventListener("click",function(e){
         }
                 
         
-  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150)&&(myIron= "Cosmofer"||"Monofer"||"Ferinject"))
+  if ((patientHeight>=152&&patientHeight<=200)&&(patientWeight>=25&&patientWeight<=90)&&(patientTargetHb>=110&&patientTargetHb<=150&&patientTargetHb>patientActualHb+10)&&(patientActualHb>=50&&patientActualHb<=150))
 
     {    
         function render(){  renderDose.innerHTML=""
@@ -100,21 +111,15 @@ female.addEventListener("click",function(e){
         let ibw= factor + ((height.value-152)/2.54)*2.3.toFixed(0)
         let ddw= ibw+ 0.4*(patientWeight-ibw)
       
-        let finalWeight = 0 
+        let finalWeight = patientWeight.toFixed(0)
         let modifier= " actual"
        
-        if (bmi<25){
-            finalWeight=patientWeight.toFixed(0)
-            modifier=" actual body"
-           
-        } 
-        else if (bmi>24.9 && bmi<30){
-            finalWeight=ibw.toFixed(0) 
+        if (bmi>30&!ironPrep==="Ferinject"){
+            finalWeight=ibw.toFixed(0)
             modifier=" ideal body"
            
-        } else if (bmi>30){
-            finalWeight=ddw.toFixed(0)
-            modifier=" adjusted body" }
+        } 
+   
         else{  finalWeight=patientWeight  
                      modifier=" actual body"}
         
@@ -415,62 +420,14 @@ if(ironPrep==="Ferinject")
         }
 
          
-        render()
+         
+         
+        myfactor===45.5||myfactor===50? render():    renderError()
         
-
-        if (!((myfactor===45.5)||(myfactor===50))){
-            renderError()
-        }
       
     }
 
     
-else {
-
-        renderError()
-}
-
-  }
+else {   renderError()} }
   
  
-
-document.getElementById("cosmoferBtn").addEventListener("click",function (){
-    
-   
-    calculate(cosmofer)
-
-    document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
-    document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
-    document.getElementById("cosmoferBtn").style.backgroundColor="red"
-    
-console.log(myfactor)
-   
-    
-    
-})
-
-document.getElementById("monoferBtn").addEventListener("click",function (){
-   
-    calculate(monofer)
-   
-    document.getElementById("monoferBtn").style.backgroundColor="red"
-    document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
-    document.getElementById("ferinjectBtn").style.backgroundColor="darkslategray"
-    
-console.log(myfactor)
-  
-    
-})
-
-document.getElementById("ferinjectBtn").addEventListener("click",function (){
-   
-    calculate(ferinject)
-
-    document.getElementById("ferinjectBtn").style.backgroundColor="red"
-    document.getElementById("monoferBtn").style.backgroundColor="darkslategray"
-    document.getElementById("cosmoferBtn").style.backgroundColor="darkslategray"
-
-console.log(myfactor)
-    
-   
-})
